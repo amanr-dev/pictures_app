@@ -182,7 +182,7 @@ const CreatePins = ({ user }) => {
           <div className="flex flex-col">
             <div>
               <p className="mb-2 font-semibold text-lg sm:text-xl text-slate-700">
-                Choose pin category
+                Choose post category
               </p>
               <select
                 onChange={(e) => setCategory(e.target.value)}
@@ -209,7 +209,7 @@ const CreatePins = ({ user }) => {
                 onClick={savePin}
                 className="bg-blue-500 text-white font-bold p-2 rounded-full w-28 outline-none"
               >
-                Save Pin
+                Save Post
               </button>
             </div>
           </div>
