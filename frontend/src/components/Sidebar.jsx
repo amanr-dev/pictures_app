@@ -7,9 +7,9 @@ import { categories } from "../utils/data";
 
 // NavLink Styles
 const notActiveStyle =
-  "flex flex-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize";
+  "flex flex-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize ";
 const isActiveStyle =
-  "flex flex-center px-5 gap-3 font-extrabold border-r-2 border-black   transition-all duration-200 ease-in-out capitalize";
+  "flex flex-center px-5 gap-3 font-extrabold border-r-2 border-black   transition-all duration-200 ease-in-out  capitalize";
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -21,12 +21,16 @@ const Sidebar = ({ user, closeToggle }) => {
       <div className="flex flex-col">
         <Link
           to="/"
-          className="flex px-5 gap-2 pt-1 w-190 items-center"
+          className="relative flex px-5 gap-2 pt-1 w-190 items-center"
           onClick={handleCloseSidebar}
+          style={{ top: "-33px" }}
         >
           <img src={Logo} alt="Pictures" className="w-full" />
         </Link>
-        <div className="flex flex-col gap-5 mt-8">
+        <div
+          className="relative  flex flex-col gap-[1.8rem] mt-8"
+          style={{ top: "-70px" }}
+        >
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -62,7 +66,7 @@ const Sidebar = ({ user, closeToggle }) => {
       {user && (
         <Link
           to={`user-profile/${user.jti}`}
-          className="flex my-5 mb-3 gap-2 items-center bg-slate-50 rounded-lg shadow-lg mx-3"
+          className="flex mb-3 gap-2 items-center bg-slate-50 rounded-lg shadow-lg mx-3 relative -top-[20px]"
           onClick={handleCloseSidebar}
         >
           <img
@@ -73,6 +77,18 @@ const Sidebar = ({ user, closeToggle }) => {
           <p>{user.name}</p>
         </Link>
       )}
+      <div className="flex items-center bg-slate-50 rounded-lg  p-2 shadow-lg mb-2 mx-3">
+        <span className="text-slate-500 text-sm font-semibold">
+          Built by{" "}
+          <a
+            target="_blank"
+            href="https://github.com/amanr-dev"
+            className="text-blue-500"
+          >
+            Aman Rawat
+          </a>
+        </span>
+      </div>
     </div>
   );
 };

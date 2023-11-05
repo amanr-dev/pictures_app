@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HiMenu } from "react-icons/hi";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { Link, Route, Routes, json } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Sidebar, User, Pins } from "./";
 import Logo from "../assets/pictures.png";
 import { client } from "../client";
@@ -34,7 +34,7 @@ const Home = () => {
         <Sidebar user={user && user} />
       </div>
       <div className="flex md:hidden flex-row">
-        <div className="p-2 w-full flex-row justify-between flex items-center shadow-md">
+        <div className="px-4 w-full flex-row justify-between flex items-center shadow-md">
           <HiMenu
             fontSize={40}
             className="cursor-pointer"
@@ -56,7 +56,7 @@ const Home = () => {
             <div className="absolute w-full flex justify-end items-center p-2">
               <AiFillCloseCircle
                 fontSize={30}
-                className="cursor-pointer"
+                className="text-slate-700 cursor-pointer text-4xl"
                 onClick={() => setToggle(false)}
               />
             </div>
