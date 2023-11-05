@@ -6,7 +6,7 @@ import { Sidebar, User, Pins } from "./";
 import Logo from "../assets/pictures.png";
 import { client } from "../client";
 import { userQuery } from "../utils/data";
-import jwtDecode from "jwt-decode";
+// import jwtDecode from "jwt-decode";
 import { fetchUser } from "../utils/fetchUser";
 
 const Home = () => {

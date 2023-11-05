@@ -11,9 +11,10 @@ const Login = () => {
 
   // On Success
   const onSuccess = (res) => {
-    localStorage.setItem("user", JSON.stringify(res.credential));
+    const userRes = jwtDecode(res.credential);
+    localStorage.setItem("user", JSON.stringify(userRes));
 
-    const { name, picture, jti } = jwtDecode(res.credential);
+    const { name, picture, jti } = userRes;
 
     const doc = {
       _id: jti,
@@ -25,7 +26,6 @@ const Login = () => {
     client.createIfNotExists(doc).then(() => {
       navigate("/", { replace: true });
     });
-    // console.log(doc);
   };
 
   // On Success
@@ -33,7 +33,6 @@ const Login = () => {
     console.log("Faild🥲", res);
   };
 
-  // console.log(localStorage.getItem(JSON.parse("user")));
   return (
     <div className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">
