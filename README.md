@@ -2,7 +2,7 @@
 ## Built with the powerful React.js frontend, it provides an engaging user experience.
 ## The backend, powered by Sanity.io, ensures efficient data management, making it easy to upload, share, and discover photos. With advanced features like real-time notifications and customizable user profiles, ## ## Pictures offers a unique and interactive way to explore and share the world through visuals.
 
-### Visit to my project [pictures-me](pictures-me.netlify.app)
+### Visit to my project [pictures-me](https://pictures-me.netlify.app)
 
 ### Screenshots:-
 ![Screenshot 2023-11-05 222635](https://github.com/amanr-dev/pictures_app/assets/124811276/1d607f08-8786-435a-a5b2-133a5eba8e20)
