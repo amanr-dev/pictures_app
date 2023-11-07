@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { RiHomeFill } from "react-icons/ri";
+import { RiHome2Line } from "react-icons/ri";
 // import { IoIosArrowForward } from "react-icons/io";
 import Logo from "../assets/pictures.png";
 import { categories } from "../utils/data";
 
 // NavLink Styles
 const notActiveStyle =
-  "flex flex-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize ";
+  "flex flex-center px-5 gap-2 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize  items-center";
 const isActiveStyle =
-  "flex flex-center px-5 gap-3 font-extrabold border-r-2 border-black   transition-all duration-200 ease-in-out  capitalize";
+  "flex flex-center px-5 gap-2 font-extrabold border-r-2 border-black   transition-all duration-200 ease-in-out items-center  capitalize";
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -38,7 +38,7 @@ const Sidebar = ({ user, closeToggle }) => {
             }
             onClick={handleCloseSidebar}
           >
-            <RiHomeFill />
+            <RiHome2Line fontSize="1.2rem" />
             Home
           </NavLink>
           <h3 className="mt-2 px-5 text-base 2xl:text-xl font-semibold text-gray-500">
@@ -82,6 +82,7 @@ const Sidebar = ({ user, closeToggle }) => {
           Built by{" "}
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://github.com/amanr-dev"
             className="text-blue-500"
           >

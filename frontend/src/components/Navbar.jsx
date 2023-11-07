@@ -26,13 +26,13 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           <img
             src={user?.picture}
             alt="user-pic"
-            className="w-14 h-12 rounded-full"
+            className="w-12 h-10 rounded-full border-2 border-blue-500"
           />
         </Link>
         <Link
           to="create-pin"
-          className="bg-black
-        text-white rounded-full w-12 h-12 md:w-14 md:h-12 jus justify-center flex items-center text-2xl"
+          className="bg-slate-700
+        text-white rounded-full w-12 h-12 md:w-12 md:h-10 jus justify-center flex items-center text-2xl hover:opacity-90"
         >
           <IoMdAdd />
         </Link>

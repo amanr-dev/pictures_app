@@ -18,23 +18,27 @@ const Feed = () => {
         setPins(data);
         setLoading(false);
       });
+      window.document.title = `Pictures | ${
+        categoryId.slice(0, 1).toUpperCase() + categoryId.slice(1)
+      }`;
     } else {
       client.fetch(feedQuery).then((data) => {
         setPins(data);
         setLoading(false);
       });
+      window.document.title = "Pictures";
     }
   }, [categoryId]);
 
   if (!pins?.length) {
     return (
       <div className="w-full h-full flex justify-center items-center  flex-col gap-4">
-        <span className="text-2xl text-slate-500">
+        <span className="text-2xl text-slate-500 ">
           No Posts Found, Go create posts.
         </span>
         <Link
           to={`/create-pin`}
-          className="bg-blue-500 text-white px-3 py-2 rounded-lg text-xl hover:bg-blue-700"
+          className="text-blue-500 px-3 py-2 text-xl hover:text-blue-700"
         >
           Create post
         </Link>
