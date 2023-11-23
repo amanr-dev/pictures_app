@@ -10,7 +10,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
 
   return (
     <div className="flex gap-2 md:gap-5 w-full mt-5 pb-7">
-      <div className="flex justify-start items-center w-full px-2 rounded-md bg-white border-none outline-none focus-within:shadow-sm">
+      <div className="flex justify-start items-center w-full px-2 rounded-md bg-slate-100  border-none outline-none focus-within:shadow-sm">
         <IoMdSearch className="ml-1" fontSize={21} />
         <input
           type="text"
@@ -18,7 +18,8 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           placeholder="Search..."
           value={searchTerm}
           onFocus={() => navigate("/search")}
-          className="p-2 w-full bg-white outline-none"
+          onBlur={() => navigate("/")}
+          className="p-2 w-full bg-slate-100 rounded-md outline-none"
         />
       </div>
       <div className="flex gap-3">
