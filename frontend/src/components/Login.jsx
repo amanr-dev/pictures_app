@@ -50,11 +50,10 @@ const Login = () => {
             <img
               src={Logo}
               alt="pictures"
-              width="130px"
-              className="rounded-sm"
+              className="rounded-sm lg:w-[200px] max-lg:w-[180px]"
             />
           </div>
-          <div className="shadow-2xl">
+          <div className="shadow-2xl relative bottom-[4rem]">
             {/* Google login */}
             <GoogleLogin
               onSuccess={onSuccess}
