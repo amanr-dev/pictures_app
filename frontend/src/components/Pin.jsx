@@ -6,7 +6,6 @@ import { MdDownloadForOffline } from "react-icons/md";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { fetchUser } from "../utils/fetchUser";
-import { useMediaQuery } from "react-responsive";
 
 const Pin = ({
   responsive,
