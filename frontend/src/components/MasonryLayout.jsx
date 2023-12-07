@@ -13,16 +13,16 @@ const breakpointObj = {
 };
 
 const MasonryLayout = ({ pins }) => {
-  const [isMobile, setIsMobile] = useState(null);
+  // const [isMobile, setIsMobile] = useState(null);
 
   const responsive = useMediaQuery({
-    query: "(min-width: 1224px)",
+    query: "(max-width: 666px)",
   });
 
   // Adding responsiveness
-  useEffect(() => {
-    setIsMobile(responsive);
-  }, [responsive]);
+  // useEffect(() => {
+  //   setIsMobile(responsive);
+  // }, [responsive]);
 
   // console.log(pins);
   return (
@@ -30,7 +30,7 @@ const MasonryLayout = ({ pins }) => {
       {pins?.map((pin) => (
         <Pin
           responsive={responsive}
-          isMobile={isMobile}
+          // isMobile={isMobile}
           key={pin._id}
           pin={pin}
         />
