@@ -18,7 +18,7 @@ const Pin = ({
 
   const user = fetchUser();
 
-  console.log({ responsive });
+  // console.log({ responsive });
 
   // prettier-ignore
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.jti))?.length;
