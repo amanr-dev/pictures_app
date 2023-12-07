@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
 import Pin from "./Pin";
+import { useMediaQuery } from "react-responsive";
 
 const breakpointObj = {
   default: 4,
@@ -12,11 +13,27 @@ const breakpointObj = {
 };
 
 const MasonryLayout = ({ pins }) => {
+  const [isMobile, setIsMobile] = useState(null);
+
+  const responsive = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  // Adding responsiveness
+  useEffect(() => {
+    setIsMobile(responsive);
+  }, [responsive]);
+
   // console.log(pins);
   return (
     <Masonry className="flex animate-slide-fwd " breakpointCols={breakpointObj}>
       {pins?.map((pin) => (
-        <Pin key={pin._id} pin={pin} />
+        <Pin
+          responsive={responsive}
+          isMobile={isMobile}
+          key={pin._id}
+          pin={pin}
+        />
       ))}
     </Masonry>
   );

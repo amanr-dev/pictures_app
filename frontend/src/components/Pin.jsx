@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { urlFor, client } from "../client";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
@@ -6,12 +6,19 @@ import { MdDownloadForOffline } from "react-icons/md";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { fetchUser } from "../utils/fetchUser";
+import { useMediaQuery } from "react-responsive";
 
-const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
+const Pin = ({
+  responsive,
+  isMobile,
+  pin: { postedBy, image, _id, destination, save },
+}) => {
   const navigate = useNavigate();
   const [postHovered, setPostHovered] = useState(false);
 
   const user = fetchUser();
+
+  console.log({ responsive, isMobile });
 
   // prettier-ignore
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.jti))?.length;
