@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { IoMdAdd, IoMdSearch } from "react-icons/io";
+import { IoMdSearch } from "react-icons/io";
+import { FaUpload } from "react-icons/fa6";
 
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   const navigate = useNavigate();
@@ -33,9 +34,9 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
         <Link
           to="create-pin"
           className="bg-slate-700
-        text-white rounded-full w-12 h-12 md:w-12 md:h-10 jus justify-center flex items-center text-2xl hover:opacity-90"
+        text-white rounded-full w-10 h-10 md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
         >
-          <IoMdAdd />
+          <FaUpload />
         </Link>
       </div>
     </div>

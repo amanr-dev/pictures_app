@@ -1,5 +1,3 @@
-import jwtDecode from "jwt-decode";
-
 export const fetchUser = () => {
   const user =
     localStorage.getItem("user") !== "undefined"
