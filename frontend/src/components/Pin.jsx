@@ -17,8 +17,6 @@ const Pin = ({
 
   const user = fetchUser();
 
-  // console.log({ responsive });
-
   // prettier-ignore
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.jti))?.length;
 
@@ -71,81 +69,82 @@ const Pin = ({
           alt="user-post"
           className="rounded-lg w-full"
         />
-        {postHovered ||
-          (responsive && (
-            <div
-              className="absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-20
+
+        {/* prettier-ignore */}
+        {(postHovered || responsive) && (
+          <div
+            className="absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-20
           "
-              style={{ height: "100%" }}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex gap-2">
-                  <a
-                    href={`${image?.asset?.url}?dl=`}
-                    download
-                    onClick={(e) => e.stopPropagation()}
-                    className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-slate-700
+            style={{ height: "100%" }}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex gap-2">
+                <a
+                  href={`${image?.asset?.url}?dl=`}
+                  download
+                  onClick={(e) => e.stopPropagation()}
+                  className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-slate-700
                   text-xl opacity-75
                   hover:opacity-100 hover:shadow-md outline-none"
-                  >
-                    <MdDownloadForOffline />
-                  </a>
-                </div>
-                {alreadySaved ? (
-                  <button
-                    type="button"
-                    className="bg-blue-500 opacity-70 hover:opacity-100 text-white font-bold px-2 py-1 text-base rounded-3xl 
+                >
+                  <MdDownloadForOffline />
+                </a>
+              </div>
+              {alreadySaved ? (
+                <button
+                  type="button"
+                  className="bg-blue-500 opacity-70 hover:opacity-100 text-white font-bold px-2 py-1 text-base rounded-3xl 
                 hover:shadow-md outline-none"
-                  >
-                    {save?.length} Saved
-                  </button>
-                ) : (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      savePin(_id);
-                    }}
-                    type="button"
-                    className="bg-blue-500 opacity-70 hover:opacity-100 text-white font-bold px-2 py-1 text-base rounded-3xl 
+                >
+                  {save?.length} Saved
+                </button>
+              ) : (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    savePin(_id);
+                  }}
+                  type="button"
+                  className="bg-blue-500 opacity-70 hover:opacity-100 text-white font-bold px-2 py-1 text-base rounded-3xl 
               hover:shadow-md outline-none"
-                  >
-                    Save
-                  </button>
-                )}
-              </div>
-              <div
-                className="flex justify-between items-center gap-2 w-full
-            "
-              >
-                {destination && (
-                  <a
-                    href={destination}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-white flex items-center gap-1 text-slate-700 font-semibold p-2 pl-2 pr-2 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
-                  >
-                    <BsFillArrowUpRightCircleFill />
-                    {destination.length > 18
-                      ? destination.slice(0, 15)
-                      : destination}
-                  </a>
-                )}
-                {postedBy?._id === user?.jti && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      deletePin(_id);
-                    }}
-                    type="button"
-                    className="bg-red-500 opacity-70 hover:opacity-100 p-2 rounded-3xl 
-            hover:shadow-md outline-none text-xl text-white"
-                  >
-                    <AiTwotoneDelete />
-                  </button>
-                )}
-              </div>
+                >
+                  Save
+                </button>
+              )}
             </div>
-          ))}
+            <div
+              className="flex justify-between items-center gap-2 w-full
+            "
+            >
+              {destination && (
+                <a
+                  href={destination}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-white flex items-center gap-1 text-slate-700 font-semibold p-2 pl-2 pr-2 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
+                >
+                  <BsFillArrowUpRightCircleFill />
+                  {destination.length > 18
+                    ? destination.slice(0, 15)
+                    : destination}
+                </a>
+              )}
+              {postedBy?._id === user?.jti && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    deletePin(_id);
+                  }}
+                  type="button"
+                  className="bg-red-500 opacity-70 hover:opacity-100 p-2 rounded-3xl 
+            hover:shadow-md outline-none text-xl text-white"
+                >
+                  <AiTwotoneDelete />
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </div>
       <Link
         to={`user-profile/${postedBy?._id}`}

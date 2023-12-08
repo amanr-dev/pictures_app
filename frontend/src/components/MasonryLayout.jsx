@@ -24,7 +24,7 @@ const MasonryLayout = ({ pins }) => {
   //   setIsMobile(responsive);
   // }, [responsive]);
 
-  // console.log(pins);
+  // console.log(responsive);
   return (
     <Masonry className="flex animate-slide-fwd " breakpointCols={breakpointObj}>
       {pins?.map((pin) => (
