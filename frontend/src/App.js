@@ -8,7 +8,6 @@ import AnimatedCursor from "react-animated-cursor";
 
 function App() {
   const navigate = useNavigate();
-
   useEffect(() => {
     const user = fetchUser();
 
