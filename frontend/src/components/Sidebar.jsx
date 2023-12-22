@@ -77,19 +77,6 @@ const Sidebar = ({ user, closeToggle }) => {
           <p>{user.name}</p>
         </Link>
       )}
-      <div className="flex items-center bg-slate-50 rounded-lg  p-2 shadow-lg mb-2 mx-3">
-        <span className="text-slate-500 text-sm font-semibold">
-          Built by{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://github.com/amanr-dev"
-            className="text-blue-500"
-          >
-            Aman Rawat
-          </a>
-        </span>
-      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+
 import Pictures from "../assets/pictures.mp4";
 import Logo from "../assets/pictures.png";
 import { GoogleLogin } from "@react-oauth/google";
