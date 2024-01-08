@@ -3,7 +3,7 @@ import { urlFor, client } from "../client";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { MdDownloadForOffline } from "react-icons/md";
-import { AiTwotoneDelete } from "react-icons/ai";
+import { AiFillHeart, AiTwotoneDelete } from "react-icons/ai";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { fetchUser } from "../utils/fetchUser";
 
@@ -129,6 +129,7 @@ const Pin = ({
                     : destination}
                 </a>
               )}
+              {/* delete button */}
               {postedBy?._id === user?.jti && (
                 <button
                   onClick={(e) => {
@@ -140,6 +141,18 @@ const Pin = ({
             hover:shadow-md outline-none text-xl text-white"
                 >
                   <AiTwotoneDelete />
+                </button>
+              )}
+              {postedBy?._id === user?.jti || (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                  type="button"
+                  className="bg-red-500 opacity-70 hover:opacity-100 p-2 rounded-3xl 
+            hover:shadow-md outline-none text-xl text-white"
+                >
+                  <AiFillHeart />
                 </button>
               )}
             </div>
