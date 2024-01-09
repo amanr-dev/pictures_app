@@ -31,7 +31,7 @@ const User = () => {
     client.fetch(query).then((data) => {
       setUser(data[0]);
     });
-    // console.log(user);
+    console.log({ query });
   }, [userId]);
 
   useEffect(() => {
