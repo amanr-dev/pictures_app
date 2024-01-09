@@ -1,7 +1,6 @@
-import React from "react";
-
+import React, { useState } from "react";
 const Saved = () => {
-  return <div>Saved</div>;
+  return <div>Saved Posts</div>;
 };
 
 export default Saved;
