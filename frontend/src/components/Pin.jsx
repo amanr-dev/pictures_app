@@ -14,7 +14,7 @@ const Pin = ({
   pin: { postedBy, image, _id, destination, save },
 }) => {
   const navigate = useNavigate();
-  const [postHovered, setPostHovered] = useState(true);
+  const [postHovered, setPostHovered] = useState(false);
 
   const user = fetchUser();
 
@@ -62,7 +62,7 @@ const Pin = ({
               duration-200
                ease-in-out  hover-div "
         onMouseEnter={() => setPostHovered(true)}
-        // onMouseLeave={() => setPostHovered(false)}
+        onMouseLeave={() => setPostHovered(false)}
         onClick={() => navigate(`/pin-detail/${_id}`)}
       >
         <img
