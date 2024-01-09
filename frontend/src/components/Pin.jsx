@@ -6,6 +6,7 @@ import { MdDownloadForOffline } from "react-icons/md";
 import { AiFillHeart, AiTwotoneDelete } from "react-icons/ai";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { fetchUser } from "../utils/fetchUser";
+import { BiBookmark, BiSolidBookmark } from "react-icons/bi";
 
 const Pin = ({
   responsive,
@@ -13,7 +14,7 @@ const Pin = ({
   pin: { postedBy, image, _id, destination, save },
 }) => {
   const navigate = useNavigate();
-  const [postHovered, setPostHovered] = useState(false);
+  const [postHovered, setPostHovered] = useState(true);
 
   const user = fetchUser();
 
@@ -59,9 +60,9 @@ const Pin = ({
             overflow-hidden
              transition-all
               duration-200
-               ease-in-out"
+               ease-in-out  hover-div "
         onMouseEnter={() => setPostHovered(true)}
-        onMouseLeave={() => setPostHovered(false)}
+        // onMouseLeave={() => setPostHovered(false)}
         onClick={() => navigate(`/pin-detail/${_id}`)}
       >
         <img
@@ -93,10 +94,13 @@ const Pin = ({
               {alreadySaved ? (
                 <button
                   type="button"
-                  className="bg-blue-500 opacity-70 hover:opacity-100 text-white font-bold px-2 py-1 text-base rounded-3xl 
-                hover:shadow-md outline-none"
+                  className="bg-blue-500 opacity-70 hover:opacity-100 text-white font-bold p-2 text-2xl rounded-3xl flex-row flex items-center justify-center 
+                  hover:shadow-md outline-none relative"
                 >
-                  {save?.length} Saved
+                  <span className="absolute text-[12px] text-gray-500">
+                    {save?.length}
+                  </span>
+                  <BiSolidBookmark />
                 </button>
               ) : (
                 <button
@@ -105,10 +109,10 @@ const Pin = ({
                     savePin(_id);
                   }}
                   type="button"
-                  className="bg-blue-500 opacity-70 hover:opacity-100 text-white font-bold px-2 py-1 text-base rounded-3xl 
+                  className="bg-blue-500 opacity-70 hover:opacity-100 text-white font-bold p-2 text-lg rounded-3xl 
               hover:shadow-md outline-none"
                 >
-                  Save
+                  <BiBookmark />
                 </button>
               )}
             </div>

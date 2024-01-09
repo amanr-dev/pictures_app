@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
 import { FaUpload } from "react-icons/fa6";
+import { BiBookmark } from "react-icons/bi";
 
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   const navigate = useNavigate();
@@ -24,6 +25,13 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
         />
       </div>
       <div className="flex gap-3">
+        <Link
+          to={`user-profile/${user?.jti}`}
+          className="bg-slate-700
+        text-white rounded-full w-10 h-10 md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
+        >
+          <BiBookmark />
+        </Link>
         <Link to={`user-profile/${user?.jti}`} className="hidden md:block">
           <img
             src={user?.picture}
