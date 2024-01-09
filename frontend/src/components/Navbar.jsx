@@ -26,7 +26,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
       </div>
       <div className="flex gap-3">
         <Link
-          to="/Saved"
+          to={`/saved-posts/:${user?.jti}`}
           className="bg-slate-700
         text-white rounded-full w-10 h-10 md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
         >
