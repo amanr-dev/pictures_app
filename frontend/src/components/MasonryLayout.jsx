@@ -41,7 +41,7 @@ const MasonryLayout = ({ pins }) => {
           />
         ))}
       </Masonry>
-      <div className="flex items-center justify-around bg-slate-50 rounded-lg  px-4 py-2 shadow-lg  mx-auto ">
+      <div className="flex items-center justify-around bg-slate-50 rounded-lg  px-4 py-2 shadow-lg  mx-auto mt-[20%]">
         <div className="flex items-center justify-center gap-4">
           <span className="text-xl ">
             <a
@@ -62,7 +62,7 @@ const MasonryLayout = ({ pins }) => {
             </a>
           </span>
         </div>
-        <div className="p-2">
+        <div className="p-2 ">
           <span className="text-slate-500 text-sm font-semibold">
             Built by <span className="text-blue-500">Aman Rawat</span>
           </span>

@@ -7,17 +7,17 @@ import MasonryLayout from "./MasonryLayout";
 const Saved = () => {
   const { userId } = useParams();
   const [user, setUser] = useState(null);
-  const [savedPosts, setSavedPosts] = useState([]);
+  const [savedPosts, setSavedPosts] = useState(null);
 
   useEffect(() => {
     const query = userQuery(userId);
     client.fetch(query).then((data) => {
       setUser(data[0]);
     });
-    console.log({ query, user });
+    // console.log({ query, user });
   }, [userId]);
 
-  console.log(savedPosts);
+  // console.log(savedPosts);
   useEffect(() => {
     const savePinsQuery = userSavedPinsQuery(userId);
     // console.log(savePinsQuery);
@@ -33,7 +33,7 @@ const Saved = () => {
         <header className="w-full p-4 bg-slate-100">
           <h4 className="text-gray-500 text-3xl font-semibold">Saved Posts</h4>
         </header>
-        {!savedPosts.length ? (
+        {!savedPosts?.length ? (
           <div className="flex justify-center items-center text-xl text-slate-500 mt-[20%]">
             Saved Posts not found!
           </div>
