@@ -8,6 +8,7 @@ import { client } from "../client";
 import { userQuery } from "../utils/data";
 // import jwtDecode from "jwt-decode";
 import { fetchUser } from "../utils/fetchUser";
+import Saved from "./Saved";
 
 const Home = () => {
   const [toggle, setToggle] = useState(false);
@@ -69,6 +70,7 @@ const Home = () => {
         <Routes>
           <Route path="/user-profile/:userId" element={<User />} />
           <Route path="/*" element={<Pins user={user && user} />} />
+          <Route path="/saved" element={<Saved />} />
         </Routes>
       </div>
     </div>
