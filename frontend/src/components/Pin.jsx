@@ -53,7 +53,7 @@ const Pin = ({
     <div className="m-2">
       <div
         className="relative
-         cursor-zoom-in
+         cursor-pointer
           w-auto
            hover:shadow-xl 
            rounded-lg

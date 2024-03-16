@@ -1,9 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind&family=Mooli&family=Onest&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Onest", sans-serif;
+@layer base {
+  * {
+    @apply custom-scrollbar;
+  }
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #334155;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #011c53;
+  border-radius: 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7878a3;
 }
