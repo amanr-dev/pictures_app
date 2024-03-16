@@ -4,8 +4,8 @@ import Login from "./components/Login";
 import "./index.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { fetchUser } from "./utils/fetchUser";
-import AnimatedCursor from "react-animated-cursor";
-import { useMediaQuery } from "react-responsive";
+// import AnimatedCursor from "react-animated-cursor";
+// import { useMediaQuery } from "react-responsive";
 
 function App() {
   const navigate = useNavigate();
@@ -17,15 +17,15 @@ function App() {
     }
   }, []);
 
-  const responsive = useMediaQuery({
-    query: "(max-width: 666px)",
-  });
+  // const responsive = useMediaQuery({
+  //   query: "(max-width: 666px)",
+  // });
 
   // console.log(responsive);
 
   return (
     <>
-      {!responsive && (
+      {/* {!responsive && (
         <AnimatedCursor
           innerSize={12}
           outerSize={8}
@@ -47,7 +47,7 @@ function App() {
             "img",
           ]}
         />
-      )}
+      )} */}
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="/*" element={<Home />} />
