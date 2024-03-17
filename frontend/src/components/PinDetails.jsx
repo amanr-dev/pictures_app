@@ -65,7 +65,7 @@ const PinDetails = ({ user }) => {
   useEffect(() => {
     fetchPinDetails();
   }, [pinId]);
-  // console.log(pinDetails);
+  console.log(pinDetails);
 
   if (!pinDetails) {
     return <Spinner text="Loading Post..." />;

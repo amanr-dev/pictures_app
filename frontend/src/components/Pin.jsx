@@ -11,16 +11,18 @@ import { BiBookmark, BiSolidBookmark } from "react-icons/bi";
 const Pin = ({
   responsive,
 
-  pin: { postedBy, image, _id, destination, save },
+  pin: { postedBy, image, _id, destination, save, likedBy },
 }) => {
   const navigate = useNavigate();
   const [postHovered, setPostHovered] = useState(false);
   const [liked, setLiked] = useState(false);
 
   const user = fetchUser();
+  // console.log(user);
 
   // prettier-ignore
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.jti))?.length;
+  // const aleradyLiked = !!(likedBy?.filter((like) => like?.posted
 
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -43,6 +45,8 @@ const Pin = ({
         });
     }
   };
+
+  const likeIt = (id) => {};
 
   const deletePin = (id) => {
     client.delete(id).then(() => {

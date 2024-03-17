@@ -98,7 +98,12 @@ export const pinDetailQuery = (pinId) => {
         userName,
         image
       },
-    }
+    },
+    likedBy[]{
+        _key,
+        _type,
+        userName,
+      },
   }`;
   return query;
 };
