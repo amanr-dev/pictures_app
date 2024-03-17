@@ -18,11 +18,12 @@ const Pin = ({
   const [liked, setLiked] = useState(false);
 
   const user = fetchUser();
-  // console.log(user);
 
   // prettier-ignore
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.jti))?.length;
-  // const aleradyLiked = !!(likedBy?.filter((like) => like?.posted
+  // prettier-ignore
+  const aleradyLiked = !!(likedBy?.filter((like) => like?.username === user?.name));
+  console.log(aleradyLiked);
 
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -46,7 +47,28 @@ const Pin = ({
     }
   };
 
-  const likeIt = (id) => {};
+  const likeIt = (id) => {
+    if (!aleradyLiked) {
+      client
+        .patch(id)
+        .setIfMissing({ likedBy: [] })
+        .insert("after", "likedBy[-1]", [
+          {
+            _key: uuidv4(),
+            _type: "likedBy",
+            userId: user?.jti,
+            liked: {
+              _type: "postedBy",
+              _ref: user?.jti,
+            },
+          },
+        ])
+        .commit()
+        .then(() => {
+          window.location.reload();
+        });
+    }
+  };
 
   const deletePin = (id) => {
     client.delete(id).then(() => {
@@ -157,13 +179,13 @@ const Pin = ({
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    setLiked(!liked);
+                    likeIt(_id);
                   }}
                   type="button"
                   className="bg-red-500 opacity-70 hover:opacity-100 p-2 rounded-3xl 
             hover:shadow-md outline-none text-xl text-white"
                 >
-                  {liked ? <AiFillHeart /> : <AiOutlineHeart />}
+                  {aleradyLiked ? <AiFillHeart /> : <AiOutlineHeart />}
                 </button>
               )}
             </div>
