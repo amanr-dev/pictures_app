@@ -7,9 +7,9 @@ import { categories } from "../utils/data";
 
 // NavLink Styles
 const notActiveStyle =
-  "flex flex-center px-5 gap-2 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize  items-center";
+  "flex flex-center p-3 my-2 rounded-lg gap-2 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize  items-center";
 const isActiveStyle =
-  "flex flex-center px-5 gap-2 font-extrabold border-r-2 border-black   transition-all duration-200 ease-in-out items-center  capitalize";
+  "flex flex-center p-3 my-2 bg-slate-200 rounded-lg gap-2 font-extrabold text-slate-700   transition-all duration-200 ease-in-out items-center  capitalize";
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -27,10 +27,7 @@ const Sidebar = ({ user, closeToggle }) => {
         >
           <img src={Logo} alt="Pictures" className="w-full" />
         </Link>
-        <div
-          className="relative  flex flex-col gap-[1.8rem] mt-8"
-          style={{ top: "-70px" }}
-        >
+        <div className="relative  flex flex-col  mt-8" style={{ top: "-70px" }}>
           <NavLink
             to="/"
             className={({ isActive }) =>
