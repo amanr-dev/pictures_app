@@ -65,7 +65,7 @@ const PinDetails = ({ user }) => {
   useEffect(() => {
     fetchPinDetails();
   }, [pinId]);
-  // console.log(pinDetails);
+  console.log(pinDetails);
 
   if (!pinDetails) {
     return <Spinner text="Loading Post..." />;
@@ -123,24 +123,36 @@ const PinDetails = ({ user }) => {
             <div className="w-full flex items-start justify-between flex-col mt-4 max-h-[500px] min-h-[490px]">
               <div className="max-h-370 overflow-y-auto bg-slate-200 w-full rounded-md p-4 mt-4">
                 <h2 className=" text-2xl border-slate-700 ">Comments</h2>
-                {pinDetails?.comment?.map((c, idx) => (
-                  <div
-                    className="flex gap-2 mt-5 items-center  shadow-md p-2 rounded-lg bg-slate-50"
-                    key={idx}
-                  >
-                    <img
-                      src={c.postedBy?.image}
-                      alt="user-profile"
-                      className="w-10 h-10 rounded-full cursor-pointer"
-                    />
-                    <div className="flex flex-col">
-                      <p className="font-bold text-slate-700">
-                        {c.postedBy?.userName}
-                      </p>
-                      <p>{c.comment}</p>
+                {!pinDetails?.comment?.length ? (
+                  <div className="flex gap-2 mt-5 items-center  shadow-md p-2 rounded-lg bg-slate-200">
+                    <div className="flex flex-col w-full">
+                      <div className="w-full flex items-center justify-center mx-auto">
+                        <span className="text-center text-sm italic">
+                          Comments enpty. Be the first to comment!
+                        </span>
+                      </div>
                     </div>
                   </div>
-                ))}
+                ) : (
+                  pinDetails?.comment?.map((c, idx) => (
+                    <div
+                      className="flex gap-2 mt-5 items-center  shadow-md p-2 rounded-lg bg-slate-50"
+                      key={idx}
+                    >
+                      <img
+                        src={c.postedBy?.image}
+                        alt="user-profile"
+                        className="w-10 h-10 rounded-full cursor-pointer"
+                      />
+                      <div className="flex flex-col">
+                        <p className="font-bold text-slate-700">
+                          {c.postedBy?.userName}
+                        </p>
+                        <p>{c.comment}</p>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
 
               <div className="flex flex-wrap mt-6 gap-3 w-full">
