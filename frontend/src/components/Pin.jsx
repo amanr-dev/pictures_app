@@ -23,7 +23,6 @@ const Pin = ({
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.jti))?.length;
   // prettier-ignore
   const aleradyLiked = Boolean(likedBy?.filter((like) => like?.username === user?.name));
-  // console.log(postedBy?._id === user?.jti);
 
   const savePin = (id) => {
     if (!alreadySaved) {
