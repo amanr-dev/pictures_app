@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { client } from "../client";
 import Spinner from "./Spinner";
 import MasonryLayout from "./MasonryLayout";
@@ -51,7 +51,6 @@ const Feed = () => {
   if (loading)
     return <Spinner text="Please wait while we fetching the Posts..." />;
 
-  // console.log(pins);
   return <>{pins && <MasonryLayout pins={pins} />}</>;
 };
 
