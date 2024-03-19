@@ -3,7 +3,6 @@ import MasonryLayout from "./MasonryLayout";
 import { client } from "../client";
 import { feedQuery, searchQuery } from "../utils/data";
 import Spinner from "./Spinner";
-import { Link } from "react-router-dom";
 
 const Search = ({ searchTerm }) => {
   const [pins, setPins] = useState(null);
@@ -29,13 +28,20 @@ const Search = ({ searchTerm }) => {
   return (
     <div>
       {loading && <Spinner text="Searching posts..." />}
-      {pins?.length !== 0 && <MasonryLayout pins={pins} />}
+      {pins?.length !== 0 && (
+        <>
+          <div className="flex items-start justify-start p-2">
+            <h4 className="text-xl text-slate-700 font-semibold">
+              Showing results for{" "}
+              <span className="text-blue-500">{searchTerm}</span>
+            </h4>
+          </div>
+          <MasonryLayout pins={pins} />
+        </>
+      )}
       {pins?.length === 0 && searchTerm !== "" && !loading && (
         <div className="w-full h-full flex justify-center items-center  flex-col gap-4 mt-[10vw]">
           <span className="text-2xl text-slate-500">No Posts Found!</span>
-          <Link to="/" className="text-blue-500 text-xl hover:text-blue-700">
-            Back to home
-          </Link>
         </div>
       )}
     </div>
