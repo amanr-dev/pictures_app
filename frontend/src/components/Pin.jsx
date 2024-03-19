@@ -23,7 +23,7 @@ const Pin = ({
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.jti))?.length;
   // prettier-ignore
   const aleradyLiked = !!(likedBy?.filter((like) => like?.username === user?.name));
-  console.log(aleradyLiked);
+  console.log();
 
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -46,7 +46,13 @@ const Pin = ({
         });
     }
   };
-
+  // console.log(user);
+  // "likedBy": [
+  //   {
+  //     "_key": "1f0583ee7d7a",
+  //     "_type": "user",
+  //     "userName": "Kishan Rawat_xo"
+  //   },
   const likeIt = (id) => {
     if (!aleradyLiked) {
       client
@@ -55,12 +61,8 @@ const Pin = ({
         .insert("after", "likedBy[-1]", [
           {
             _key: uuidv4(),
-            _type: "likedBy",
-            userId: user?.jti,
-            liked: {
-              _type: "postedBy",
-              _ref: user?.jti,
-            },
+            _type: "user",
+            username: user?.name,
           },
         ])
         .commit()
