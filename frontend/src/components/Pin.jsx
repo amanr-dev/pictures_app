@@ -46,13 +46,7 @@ const Pin = ({
         });
     }
   };
-  // console.log(user);
-  // "likedBy": [
-  //   {
-  //     "_key": "1f0583ee7d7a",
-  //     "_type": "user",
-  //     "userName": "Kishan Rawat_xo"
-  //   },
+
   const likeIt = (id) => {
     if (!aleradyLiked) {
       client
