@@ -130,6 +130,11 @@ export const pinDetailMorePinQuery = (pin) => {
         image
       },
     },
+    likedBy[]{
+      _key,
+      _type,
+      userName,
+    },
   }`;
   return query;
 };
@@ -162,6 +167,11 @@ export const searchQuery = (searchTerm) => {
         image
       },
     },
+    likedBy[]{
+      _key,
+      _type,
+      userName,
+    },
   }`;
 
   return query;
@@ -188,6 +198,11 @@ export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
       image
     },
   },
+  likedBy[]{
+    _key,
+    _type,
+    userName,
+  },
 }`;
 
 export const userCreatedPinsQuery = (userId) => {
@@ -210,6 +225,11 @@ export const userCreatedPinsQuery = (userId) => {
         userName,
         image
       },
+    },
+    likedBy[]{
+      _key,
+      _type,
+      userName,
     },
   }`;
   return query;
@@ -235,6 +255,11 @@ export const userSavedPinsQuery = (userId) => {
         userName,
         image
       },
+    },
+    likedBy[]{
+      _key,
+      _type,
+      userName,
     },
   }`;
   return query;

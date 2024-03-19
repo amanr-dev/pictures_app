@@ -15,15 +15,15 @@ const Pin = ({
 }) => {
   const navigate = useNavigate();
   const [postHovered, setPostHovered] = useState(false);
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
 
   const user = fetchUser();
 
   // prettier-ignore
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.jti))?.length;
   // prettier-ignore
-  const aleradyLiked = !!(likedBy?.filter((like) => like?.username === user?.name));
-  console.log();
+  const aleradyLiked = Boolean(likedBy?.filter((like) => like?.username === user?.name));
+  // console.log(postedBy?._id === user?.jti);
 
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -171,18 +171,24 @@ const Pin = ({
                 </button>
               )}
               {/* Like Button */}
-              {postedBy?._id === user?.jti || (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    likeIt(_id);
-                  }}
-                  type="button"
-                  className="bg-red-500 opacity-70 hover:opacity-100 p-2 rounded-3xl 
-            hover:shadow-md outline-none text-xl text-white"
-                >
-                  {aleradyLiked ? <AiFillHeart /> : <AiOutlineHeart />}
-                </button>
+              {postedBy?._id === user?.jti ? null : (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      likeIt(_id);
+                    }}
+                    type="button"
+                    className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold  text-2xl p-2 rounded-3xl 
+             flex-row flex items-center justify-center 
+            hover:shadow-md outline-none relative "
+                  >
+                    <span className="absolute text-[12px] text-gray-500">
+                      {likedBy?.length}
+                    </span>
+                    {aleradyLiked ? <AiFillHeart /> : <AiOutlineHeart />}
+                  </button>
+                </>
               )}
             </div>
           </div>
