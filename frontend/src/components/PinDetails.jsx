@@ -65,12 +65,13 @@ const PinDetails = ({ user }) => {
   useEffect(() => {
     fetchPinDetails();
   }, [pinId]);
-  console.log(pinDetails);
+  // console.log(pinDetails?.postedBy.userName);
 
   if (!pinDetails) {
     return <Spinner text="Loading Post..." />;
   }
 
+  const { postedBy, image, destination, title, about } = pinDetails;
   return (
     <>
       <div
@@ -86,9 +87,9 @@ const PinDetails = ({ user }) => {
         </div>
         <div className="w-full p-5 flex-1 xl:min-w-620 rounded-s-xl border-slate-200 border-2  border-l-0">
           <div className="flex items-center ">
-            <div className="flex  items-center justify-between text-sm">
+            <div className="flex  items-center justify-between w-full text-sm">
               <a
-                href={`${pinDetails.image?.asset?.url}?dl=`}
+                href={`${image?.asset?.url}?dl=`}
                 download
                 onClick={(e) => e.stopPropagation()}
                 className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-slate-700
@@ -97,28 +98,28 @@ const PinDetails = ({ user }) => {
               >
                 <MdDownloadForOffline />
               </a>
-              <a href={pinDetails.destination} target="_blank" rel="noreferrer">
+              <a href={destination} target="_blank" rel="noreferrer">
                 Visit Post Destination
               </a>
             </div>
           </div>
           <div className="flex flex-col">
-            <div className="flex justify-start items-center flex-wrap gap-2 ">
-              <Link
-                to={`/user-profile/${pinDetails.postedBy?._id}`}
-                className="flex gap-2 items-center mt-5 bg-white rounded-lg"
-              >
-                <img
-                  src={pinDetails.postedBy?.image}
-                  alt="user-profile"
-                  className="w-8 h-8 rounded-full object-cover"
-                />
-                <span>{PinDetails?.postedBy?.userName}</span>
-              </Link>
-              <h1 className="text-4xl font-bold break-words mt-3 ">
-                {pinDetails.title}
-              </h1>
-              <p className="mt-3 ml-10">{pinDetails.about}</p>
+            <div className="flex justify-start items-start flex-wrap gap-2 flex-col border-b-2 border-slate-200">
+              <div className="w-full flex items-start gap-2 flex-col  border-b-2 border-slate-200">
+                <Link
+                  to={`/user-profile/${postedBy?._id}`}
+                  className="flex gap-2 items-center mt-5 bg-white rounded-lg"
+                >
+                  <img
+                    src={postedBy?.image}
+                    alt="user-profile"
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                  <span className="text-slate-700">{postedBy?.userName}</span>
+                </Link>
+              </div>
+              <h1 className="text-4xl font-bold break-words mt-3 ">{title}</h1>
+              <p className="">{about}</p>
             </div>
 
             <div className="w-full flex items-start justify-between flex-col mt-4 max-h-[500px] min-h-[490px]">
@@ -129,7 +130,7 @@ const PinDetails = ({ user }) => {
                     <div className="flex flex-col w-full">
                       <div className="w-full flex items-center justify-center mx-auto">
                         <span className="text-center text-sm italic">
-                          Comments enpty. Be the first to comment!
+                          Comments are empty. Be the first to comment!
                         </span>
                       </div>
                     </div>
@@ -157,7 +158,7 @@ const PinDetails = ({ user }) => {
               </div>
 
               <div className="flex flex-wrap mt-6 gap-3 w-full">
-                <Link to={`/user-profile/${pinDetails.postedBy?._id}`}>
+                <Link to={`/user-profile/${postedBy?._id}`}>
                   <img
                     src={user?.picture}
                     alt="user-profile"
