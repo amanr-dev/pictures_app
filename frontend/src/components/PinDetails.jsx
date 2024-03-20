@@ -77,14 +77,14 @@ const PinDetails = ({ user }) => {
         className="flex xl:flex-row flex-col m-auto bg-white text-slate-700"
         style={{ maxWidth: "1500px", borderRadius: "32px" }}
       >
-        <div className="flex justify-center items-center md:items-start flex-initial">
+        <div className="flex justify-center items-center md:items-start flex-initial border-r-0 border-slate-200 border-2 rounded-e-xl">
           <img
             src={pinDetails?.image && urlFor(pinDetails.image).url()}
             alt="user-post"
             className="rounded-r-3xl rounded-b-lg "
           />
         </div>
-        <div className="w-full p-5 flex-1 xl:min-w-620">
+        <div className="w-full p-5 flex-1 xl:min-w-620 rounded-s-xl border-slate-200 border-2  border-l-0">
           <div className="flex items-center ">
             <div className="flex  items-center justify-between text-sm">
               <a
@@ -102,8 +102,8 @@ const PinDetails = ({ user }) => {
               </a>
             </div>
           </div>
-          <div>
-            <div className="flex justify-start items-center flex-wrap gap-2">
+          <div className="flex flex-col">
+            <div className="flex justify-start items-center flex-wrap gap-2 ">
               <Link
                 to={`/user-profile/${pinDetails.postedBy?._id}`}
                 className="flex gap-2 items-center mt-5 bg-white rounded-lg"
@@ -113,12 +113,13 @@ const PinDetails = ({ user }) => {
                   alt="user-profile"
                   className="w-8 h-8 rounded-full object-cover"
                 />
+                <span>{PinDetails?.postedBy?.userName}</span>
               </Link>
               <h1 className="text-4xl font-bold break-words mt-3 ">
                 {pinDetails.title}
               </h1>
+              <p className="mt-3 ml-10">{pinDetails.about}</p>
             </div>
-            <p className="mt-3 ml-10">{pinDetails.about}</p>
 
             <div className="w-full flex items-start justify-between flex-col mt-4 max-h-[500px] min-h-[490px]">
               <div className="max-h-370 overflow-y-auto bg-slate-200 w-full rounded-md p-4 mt-4">
