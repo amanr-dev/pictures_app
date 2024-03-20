@@ -56,9 +56,11 @@ const Pin = ({
         .insert("after", "likedBy[-1]", [
           {
             _key: uuidv4(),
-            _type: "user",
             userId: user?.jti,
-            username: user?.name,
+            postedBy: {
+              _type: "postedBy",
+              _ref: user?.jti,
+            },
           },
         ])
         .commit()
