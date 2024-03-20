@@ -46,6 +46,8 @@ const Pin = ({
     }
   };
 
+  // console.log(user.jti);
+
   const likeIt = (id) => {
     if (!aleradyLiked) {
       client
@@ -55,6 +57,7 @@ const Pin = ({
           {
             _key: uuidv4(),
             _type: "user",
+            userId: user?.jti,
             username: user?.name,
           },
         ])
