@@ -24,6 +24,7 @@ const Pin = ({
   // prettier-ignore
   const aleradyLiked = Boolean(likedBy?.filter((like) => like?.userName === user?.name));
 
+  // Save the Post
   const savePin = (id) => {
     if (!alreadySaved) {
       client
@@ -46,8 +47,9 @@ const Pin = ({
     }
   };
 
-  console.log(aleradyLiked);
+  // console.log(aleradyLiked);
 
+  // Like the Post
   const likeIt = (id) => {
     if (!aleradyLiked) {
       client
@@ -67,6 +69,7 @@ const Pin = ({
     }
   };
 
+  // Delete the Post
   const deletePin = (id) => {
     client.delete(id).then(() => {
       window.location.reload();
