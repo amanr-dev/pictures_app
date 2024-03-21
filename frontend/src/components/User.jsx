@@ -11,7 +11,7 @@ import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 
 const randomImage =
-  "https://source.unsplash.com/1600x900/?nature,photography,technology,space";
+  "https://source.unsplash.com/1600x900/?nature,coding,universe";
 
 const actvieBtnClass =
   "bg-blue-500 mr-4 text-white font-bold p-2 rounded-full w-20 outline-none";
