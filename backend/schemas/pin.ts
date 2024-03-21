@@ -57,7 +57,7 @@ export default {
       name: 'likedBy',
       title: 'LikedBy',
       type: 'array',
-      of: [{type: 'likeBy'}],
+      of: [{type: 'user'}],
     },
   ],
 }
