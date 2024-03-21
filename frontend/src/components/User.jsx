@@ -49,6 +49,7 @@ const User = () => {
     }
   }, [text, userId]);
 
+  // Refactor the logout function, so it aslo delete the user from sanity database.
   const logout = () => {
     localStorage.clear();
     navigate("/login");
