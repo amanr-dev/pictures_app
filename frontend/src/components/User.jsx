@@ -31,7 +31,6 @@ const User = () => {
     client.fetch(query).then((data) => {
       setUser(data[0]);
     });
-    // console.log({ query });
   }, [userId]);
 
   useEffect(() => {
@@ -63,7 +62,7 @@ const User = () => {
     <div className="relative pb-2 h-full justify-center items-center">
       <div className="flex flex-col pb-5">
         <div className="relative flex flex-col mb-7">
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center ">
             <img
               src={randomImage}
               className="w-full h-370 2xl:h-510 shadow-lg object-cover"
@@ -75,10 +74,10 @@ const User = () => {
               className="rounded-full w-40 h-40 -mt-20 shadow-xl shadow-slate-400 object-cover
             "
             />
-            <h1 className="font-bold text-3xl text-center  mt-3">
+            <h1 className="font-bold text-3xl text-center text-slate-700  mt-3">
               {user.userName}
             </h1>
-            <div className="absolute top-0 right-0 z-1 p-2 text-center">
+            <div className="absolute top-0 right-0 z-1 p-2 text-center mt-2">
               {userId === user._id && (
                 <>
                   <span className="text-white font-semibold text-xl pr-2">
