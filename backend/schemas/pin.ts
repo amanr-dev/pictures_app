@@ -57,7 +57,6 @@ export default {
       name: 'likedBy',
       title: 'LikedBy',
       type: 'array',
-      id: 'string',
       of: [{type: 'user'}],
     },
   ],

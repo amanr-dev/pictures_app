@@ -58,7 +58,6 @@ const Pin = ({
             _key: uuidv4(),
             userName: user?.name,
             image: user?.picture,
-            id: user?.jti,
           },
         ])
         .commit()
