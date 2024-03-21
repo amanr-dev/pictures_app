@@ -32,11 +32,9 @@ const Pin = ({
         .insert("after", "save[-1]", [
           {
             _key: uuidv4(),
-            userId: user?.jti,
-            postedBy: {
-              _type: "postedBy",
-              _ref: user?.jti,
-            },
+            image: user?.picture,
+            id: user?.jti,
+            userName: user?.name,
           },
         ])
         .commit()
@@ -46,7 +44,12 @@ const Pin = ({
     }
   };
 
-  // console.log(user.jti);
+  //   _key:13934209b343
+  // _type:user
+  // image:https://lh3.googleusercontent.com/a/ACg8ocL_RwnH8Gnzfv50i47kdhxBF5StUmukLiiNLxHaM168v8E=s96-c
+  // userName:Kishan Rawat_xo
+
+  console.log(user);
 
   const likeIt = (id) => {
     if (!aleradyLiked) {
