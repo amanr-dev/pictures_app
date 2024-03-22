@@ -77,7 +77,7 @@ const Pin = ({
   };
 
   return (
-    <div className="m-2">
+    <div className="m-2 bg-slate-200 rounded-lg py-[5px] px-[10px] my-1 mb-4">
       <div
         className="relative
          cursor-pointer
