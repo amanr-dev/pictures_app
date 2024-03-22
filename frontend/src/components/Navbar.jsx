@@ -7,7 +7,7 @@ import { BiSolidBookmark } from "react-icons/bi";
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   return (
     <>
-      <div className="flex gap-2 md:gap-5 w-full mt-5 pb-7">
+      <div className="flex gap-2 md:gap-5 w-full mt-2 py-[15px] px-[10px]">
         <div className="flex justify-start items-center w-full px-2 rounded-md bg-slate-200  border-none outline-none focus-within:shadow-sm">
           <IoMdSearch className="ml-1 text-slate-500" fontSize={21} />
           <input
