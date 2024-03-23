@@ -18,6 +18,23 @@ body {
   --color-foreground: #1f2023;
 }
 
+body.dark {
+  --color-background: #1f2023;
+  --color-foreground: #efefef;
+}
+
+.App-header {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-background: #1f2023;
+    --color-foreground: #efefef;
+  }
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;
   height: 5px;
