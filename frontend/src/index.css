@@ -13,6 +13,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  --color-background: #fafafa;
+  --color-foreground: #1f2023;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;
   height: 5px;
