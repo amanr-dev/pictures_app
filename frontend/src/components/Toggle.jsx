@@ -1,6 +1,6 @@
 import React from "react";
 import Toggle from "react-toggle";
-import { useColorScheme } from "./useColorScheme";
+import { useColorScheme } from "../utils/useColorScheme";
 
 export const DarkModeToggle = () => {
   const { isDark, setIsDark } = useColorScheme();

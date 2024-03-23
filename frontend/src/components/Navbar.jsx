@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
 import { FaUpload } from "react-icons/fa6";
 import { BiSolidBookmark } from "react-icons/bi";
+import { DarkModeToggle } from "./Toggle";
 
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   return (
@@ -40,6 +41,9 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           >
             <FaUpload />
           </Link>
+        </div>
+        <div>
+          <DarkModeToggle />
         </div>
       </div>
     </>
