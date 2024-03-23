@@ -10,7 +10,6 @@ import { BiBookmark, BiSolidBookmark } from "react-icons/bi";
 
 const Pin = ({
   responsive,
-
   pin: { postedBy, image, _id, destination, save, likedBy },
 }) => {
   const navigate = useNavigate();
