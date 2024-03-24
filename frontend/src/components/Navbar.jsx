@@ -28,21 +28,24 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           <Link
             to={`/saved-posts/${user?.jti}`}
             className="bg-slate-700
-        text-white rounded-full w-10 h-10 md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
+        text-white rounded-full w-10  md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
           >
             <BiSolidBookmark />
           </Link>
-          <Link to={`user-profile/${user?.jti}`} className="hidden md:block">
+          <Link
+            to={`user-profile/${user?.jti}`}
+            className="hidden md:block rounded-full"
+          >
             <img
               src={user?.picture}
               alt="user-pic"
-              className="w-12 h-10 rounded-full border-2 border-blue-500"
+              className="w-12  rounded-full border-2 border-blue-500"
             />
           </Link>
           <Link
             to="create-pin"
             className="bg-slate-700
-        text-white rounded-full w-10 h-10 md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
+        text-white rounded-full w-10  md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
           >
             <FaUpload />
           </Link>

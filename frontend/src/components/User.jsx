@@ -75,7 +75,7 @@ const User = () => {
               className="rounded-full w-40 h-40 -mt-20 shadow-xl shadow-slate-400 object-cover
             "
             />
-            <h1 className="font-bold text-3xl text-center text-slate-700  mt-3">
+            <h1 className="font-bold text-3xl text-center dark:text-slate-50 text-slate-700  mt-3">
               {user.userName}
             </h1>
             <div className="absolute top-0 right-0 z-1 p-2 text-center mt-2">
@@ -126,7 +126,7 @@ const User = () => {
               <MasonryLayout pins={pins} />
             </div>
           ) : (
-            <div className="flex justify-center items-center text-xl text-slate-500 mt-4">
+            <div className="flex justify-center items-center text-xl dark:text-slate-50 text-slate-500 mt-4">
               No posts found, Please create posts!
             </div>
           )}
