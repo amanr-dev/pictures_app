@@ -52,7 +52,7 @@ const Home = () => {
           </Link>
         </div>
         {toggle && (
-          <div className="fixed  w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in">
+          <div className="fixed  w-4/5 bg-white dark:bg-slate-900 h-screen overflow-y-auto shadow-md z-10 animate-slide-in">
             <div className="absolute w-full flex justify-end items-center p-2">
               <AiFillCloseCircle
                 fontSize={30}

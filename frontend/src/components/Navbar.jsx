@@ -8,16 +8,21 @@ import { DarkModeToggle } from "./Toggle";
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   return (
     <>
-      <div className="flex gap-2 md:gap-5 w-full mt-2 py-[15px] px-[10px]">
-        <div className="flex justify-start items-center w-full px-2 rounded-md bg-slate-200  border-none outline-none focus-within:shadow-sm">
-          <IoMdSearch className="ml-1 text-slate-500" fontSize={21} />
-          <input
-            type="text"
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search..."
-            value={searchTerm}
-            className="p-2 w-full bg-slate-200 rounded-md outline-none"
-          />
+      <div className="flex gap-2 md:gap-5 w-full mt-2 py-[15px] px-[10px] dark:bg-slate-900">
+        <div className="flex justify-start items-center w-full  rounded-md    border-none outline-none focus-within:shadow-sm ">
+          <div className=" dark:bg-slate-900 rounded-md dark:outline-slate-50 flex justify-start items-center w-full px-2   border-none outline-none focus-within:shadow-sm bg-slate-200">
+            <IoMdSearch
+              className="ml-1 text-slate-500 dark:outline-slate-50"
+              fontSize={21}
+            />
+            <input
+              type="text"
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search..."
+              value={searchTerm}
+              className="p-2 w-full bg-slate-200 outline-none"
+            />
+          </div>
         </div>
         <div className="flex gap-3">
           <Link
