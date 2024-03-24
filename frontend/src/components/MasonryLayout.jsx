@@ -41,7 +41,7 @@ const MasonryLayout = ({ pins }) => {
           />
         ))}
       </Masonry>
-      <div className="flex items-center justify-around bg-slate-50 rounded-lg  px-4 py-2 shadow-lg  mx-auto mt-[20%]">
+      <div className="flex items-center justify-around dark:bg-slate-900 dark:text-slate-50  bg-slate-50 rounded-lg  px-4 py-2 shadow-lg  mx-auto mt-[20%] dark:outline-slate-50 dark:outline">
         <div className="flex items-center justify-center gap-4">
           <span className="text-xl ">
             <a
@@ -49,7 +49,7 @@ const MasonryLayout = ({ pins }) => {
               rel="noreferrer"
               href="https://github.com/amanr-dev"
             >
-              <FaGithub className="text-slate-500" />
+              <FaGithub className="text-slate-500  dark:text-slate-50" />
             </a>
           </span>
           <span className="text-xl ">
@@ -58,17 +58,17 @@ const MasonryLayout = ({ pins }) => {
               rel="noreferrer"
               href="https://twitter.com/amanrdev"
             >
-              <FaXTwitter className="text-slate-500" />
+              <FaXTwitter className="text-slate-500  dark:text-slate-50" />
             </a>
           </span>
         </div>
-        <div className="p-2 ">
-          <span className="text-slate-500 text-sm font-semibold">
+        <div className="p-2">
+          <span className="text-slate-500 text-sm font-semibold  dark:text-slate-50">
             Built by <span className="text-blue-500">Aman Rawat</span>
           </span>
         </div>
         <div className="flex items-center justify-center gap-4">
-          <span className="text-slate-500 text-sm font-semibold">
+          <span className="text-slate-500 text-sm font-semibold  dark:text-slate-50">
             &copy; {new Date().getFullYear()}
           </span>
         </div>

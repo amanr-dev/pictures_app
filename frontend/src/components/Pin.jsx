@@ -76,7 +76,7 @@ const Pin = ({
   };
 
   return (
-    <div className="m-2 bg-slate-200 rounded-lg py-[5px] px-[10px] my-1 mb-4">
+    <div className="m-2  dark:bg-slate-800  dark:text-slate-50 bg-slate-200 rounded-lg py-[5px] px-[10px] my-1 mb-4">
       <div
         className="relative
          cursor-pointer
@@ -110,7 +110,7 @@ const Pin = ({
                   href={`${image?.asset?.url}?dl=`}
                   download
                   onClick={(e) => e.stopPropagation()}
-                  className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-slate-700
+                  className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-slate-700  dark:text-slate-50  dark:bg-slate-800
                   text-xl opacity-75
                   hover:opacity-100 hover:shadow-md outline-none"
                 >
@@ -199,7 +199,7 @@ const Pin = ({
       </div>
       <Link
         to={`user-profile/${postedBy?._id}`}
-        className="flex gap-2 items-center mt-2 text-slate-700"
+        className="flex gap-2 items-center mt-2 text-slate-700  dark:text-slate-50  "
       >
         <img
           src={postedBy?.image}
