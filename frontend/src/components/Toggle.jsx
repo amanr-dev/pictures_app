@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Toggle from "react-toggle";
 import { useColorScheme } from "../utils/useColorScheme";
 import { FaSun, FaMoon, FaLightbulb } from "react-icons/fa";
@@ -11,6 +11,7 @@ export const DarkModeToggle = () => {
         {isDark ? (
           <FaSun className="text-amber-400 text-xl" />
         ) : (
+          // <FaLightbulb className="text-amber-400 text-xl" />
           <FaMoon className="text-cyan-400 text-xl" />
         )}
       </div>
