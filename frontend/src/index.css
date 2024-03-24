@@ -13,27 +13,10 @@
   }
 }
 
-/* body {
-  background-color: #fafafa;
-  color: #1f2023;
-}
-
-body.dark {
-  background-color: #1f2023;
-  color: #efefef;
+/* .dark {
+  background-color: #0f172a;
+  color: #f8fafc;
 } */
-
-.App-header {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    --color-background: #1f2023;
-    --color-foreground: #efefef;
-  }
-}
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;

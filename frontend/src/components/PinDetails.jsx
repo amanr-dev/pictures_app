@@ -75,24 +75,24 @@ const PinDetails = ({ user }) => {
   return (
     <>
       <div
-        className="flex xl:flex-row flex-col m-auto bg-white text-slate-700"
+        className="flex xl:flex-row flex-col m-auto bg-slate-50 dark:bg-slate-900 dark:text-slate-50 text-slate-700"
         style={{ maxWidth: "1500px", borderRadius: "32px" }}
       >
-        <div className="flex justify-center items-center md:items-start flex-initial border-r-0 border-slate-200 border-2 rounded-e-xl">
+        <div className="flex justify-center items-center md:items-start flex-initial border-r-0 border-slate-200 border-2 rounded-e-xl dark:border-none dark:text-slate-50">
           <img
             src={pinDetails?.image && urlFor(pinDetails.image).url()}
             alt="user-post"
             className="rounded-r-3xl rounded-b-lg "
           />
         </div>
-        <div className="w-full p-5 flex-1 xl:min-w-620 rounded-s-xl border-slate-200 border-2  border-l-0">
+        <div className="w-full p-5 flex-1 xl:min-w-620 rounded-s-xl dark:border-none border-slate-200 border-2  border-l-0">
           <div className="flex items-center ">
             <div className="flex  items-center justify-between w-full text-sm">
               <a
                 href={`${image?.asset?.url}?dl=`}
                 download
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-slate-700
+                className="bg-slate-50 w-9 h-9 rounded-full flex items-center justify-center text-slate-700
                   text-2xl opacity-75
                   hover:opacity-100 hover:shadow-md outline-none "
               >
@@ -108,14 +108,16 @@ const PinDetails = ({ user }) => {
               <div className="w-full flex items-start gap-2 flex-col  border-b-2 border-slate-200">
                 <Link
                   to={`/user-profile/${postedBy?._id}`}
-                  className="flex gap-2 items-center mt-5 bg-white rounded-lg"
+                  className="flex gap-2 items-center mt-5 bg-slate-50 p-2 dark:bg-slate-900  rounded-lg"
                 >
                   <img
                     src={postedBy?.image}
                     alt="user-profile"
                     className="w-8 h-8 rounded-full object-cover"
                   />
-                  <span className="text-slate-700">{postedBy?.userName}</span>
+                  <span className="text-slate-700 dark:text-slate-50">
+                    {postedBy?.userName}
+                  </span>
                 </Link>
               </div>
               <h1 className="text-4xl font-bold break-words mt-3 ">{title}</h1>
@@ -123,10 +125,10 @@ const PinDetails = ({ user }) => {
             </div>
 
             <div className="w-full flex items-start justify-between flex-col mt-4 max-h-[500px] min-h-[490px]">
-              <div className="max-h-370 overflow-y-auto bg-slate-200 w-full rounded-md p-4 mt-4">
+              <div className="max-h-370 overflow-y-auto dark:bg-slate-900 bg-slate-200 w-full rounded-md p-4 mt-4">
                 <h2 className=" text-2xl border-slate-700 ">Comments</h2>
                 {!pinDetails?.comment?.length ? (
-                  <div className="flex gap-2 mt-5 items-center  shadow-md p-2 rounded-lg bg-slate-200">
+                  <div className="flex gap-2 mt-5 items-center  shadow-md p-2 rounded-lg bg-slate-200 dark:bg-slate-900">
                     <div className="flex flex-col w-full">
                       <div className="w-full flex items-center justify-center mx-auto">
                         <span className="text-center text-sm italic">
@@ -138,7 +140,7 @@ const PinDetails = ({ user }) => {
                 ) : (
                   pinDetails?.comment?.map((c, idx) => (
                     <div
-                      className="flex gap-2 mt-5 items-center  shadow-md p-2 rounded-lg bg-slate-50"
+                      className="flex gap-2 mt-5 items-center  shadow-md p-2 rounded-lg dark:bg-slate-800 bg-slate-50"
                       key={idx}
                     >
                       <img
@@ -147,7 +149,7 @@ const PinDetails = ({ user }) => {
                         className="w-10 h-10 rounded-full cursor-pointer"
                       />
                       <div className="flex flex-col">
-                        <p className="font-bold text-slate-700">
+                        <p className="font-bold text-slate-700 dark:text-slate-50">
                           {c.postedBy?.userName}
                         </p>
                         <p>{c.comment}</p>
@@ -167,7 +169,7 @@ const PinDetails = ({ user }) => {
                 </Link>
                 <input
                   type="text"
-                  className="flex-1 border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300 w-full"
+                  className="flex-1 dark:bg-slate-800 border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300 w-full"
                   placeholder="Add a comment"
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
@@ -185,7 +187,7 @@ const PinDetails = ({ user }) => {
         </div>
       </div>
       {pins?.length > 0 && (
-        <h2 className="text-center font-bold text-2xl mt-8 mb-4 text-slate-700">
+        <h2 className="text-center font-bold text-2xl mt-8 mb-4 dark:text-slate-50 text-slate-700">
           More posts like this
         </h2>
       )}
