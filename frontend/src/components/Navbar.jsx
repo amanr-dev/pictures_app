@@ -8,7 +8,7 @@ import { DarkModeToggle } from "./Toggle";
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   return (
     <>
-      <div className="flex gap-2 md:gap-5 w-full mt-2 py-[15px] px-[10px] dark:bg-slate-900">
+      <div className="flex gap-2 md:gap-5 w-full mt-2  px-[10px] dark:bg-slate-900 items-center">
         <div className="flex justify-start items-center w-full  rounded-md    border-none outline-none focus-within:shadow-sm ">
           <div className=" dark:bg-slate-900 rounded-md dark:outline-slate-50 flex justify-start items-center w-full px-2   border-none outline-none focus-within:shadow-sm bg-slate-200">
             <IoMdSearch
@@ -20,7 +20,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search..."
               value={searchTerm}
-              className="p-2 w-full bg-slate-200 outline-none"
+              className="p-2 w-full bg-slate-200 outline-none dark:bg-slate-900 dark:text-slate-50"
             />
           </div>
         </div>
