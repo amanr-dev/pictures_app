@@ -13,7 +13,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
+/* body {
   background-color: #fafafa;
   color: #1f2023;
 }
@@ -21,7 +21,7 @@ body {
 body.dark {
   background-color: #1f2023;
   color: #efefef;
-}
+} */
 
 .App-header {
   background-color: var(--color-background);
