@@ -89,7 +89,7 @@ const CreatePins = ({ user }) => {
 
   const naviagte = useNavigate();
   return (
-    <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5 ">
+    <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5 dark:bg-slate-900 dark:text-slate-50">
       {fields && (
         <p className=" bg-red-200 w-full  text-red-500 mb-5 text-xl transition-all duration-150 ease-in flex flex-row justify-center gap-2 items-center">
           <FiAlertTriangle />
@@ -104,7 +104,7 @@ const CreatePins = ({ user }) => {
           Use hight-quality JPG, SVG, PNG, GIF OR TIFF less than 20 MB
         </p>
       )}
-      <div className="flex lg:flex-row flex-col justify-center items-center bg-white lg:p-5 p-3 lg:w-4/5 w-full">
+      <div className="flex lg:flex-row flex-col justify-center items-center dark:bg-slate-900 bg-white lg:p-5 p-3 lg:w-4/5 w-full ">
         <div className="bg-secondaryColor p-3 flex flex-0.7 w-full">
           <div className="justify-center flex items-center flex-col border-2 border-gray-300 p-3 w-full h-420 ">
             {loading && <Spinner />}

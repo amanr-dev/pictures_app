@@ -30,8 +30,10 @@ const Saved = () => {
   return (
     <div>
       <div className="w-full mt-8 ">
-        <header className="w-full p-4 bg-slate-100">
-          <h4 className="text-gray-500 text-3xl font-semibold">Saved Posts</h4>
+        <header className="w-full p-4 bg-slate-200 dark:bg-slate-900 ">
+          <h4 className="text-gray-500 text-3xl font-semibold dark:text-slate-50">
+            Saved Posts
+          </h4>
         </header>
         {!savedPosts?.length ? (
           <div className="flex justify-center items-center text-xl text-slate-500 mt-[20%]">
