@@ -75,10 +75,10 @@ const PinDetails = ({ user }) => {
   return (
     <>
       <div
-        className="flex xl:flex-row flex-col m-auto bg-slate-50 dark:bg-slate-900 dark:text-slate-50 text-slate-700 dark:border-slate-50 dark:border-2 dark:rounded-tl-none "
-        style={{ maxWidth: "1500px", borderRadius: "32px" }}
+        className="flex xl:flex-row flex-col m-auto bg-slate-50 dark:bg-slate-900 dark:text-slate-50 text-slate-700 dark:border-slate-50 dark:border-2 dark:rounded-tl-none rounded-3xl"
+        style={{ maxWidth: "1500px" }}
       >
-        <div className="flex justify-center items-center md:items-start flex-initial border-r-0 border-slate-200 border-2 rounded-e-full dark:border-none dark:text-slate-50">
+        <div className="flex justify-center items-center md:items-start flex-initial border-r-0 border-slate-200 border-2 dark:border-r-2 dark:border-slate-50  dark:text-slate-50">
           <img
             src={pinDetails?.image && urlFor(pinDetails.image).url()}
             alt="user-post"
