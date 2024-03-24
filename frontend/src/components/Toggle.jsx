@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Toggle from "react-toggle";
 import { useColorScheme } from "../utils/useColorScheme";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaLightbulb } from "react-icons/fa";
 
 export const DarkModeToggle = () => {
   const { isDark, setIsDark } = useColorScheme();
@@ -17,7 +17,6 @@ export const DarkModeToggle = () => {
       <Toggle
         checked={isDark}
         onChange={({ target }) => setIsDark(target.checked)}
-        // icons={{ checked: "🌙", unchecked: "🔆" }}
         icons={false}
         aria-label="Dark mode toggle"
         className="absolute  opacity-0 w-8 cursor-pointer
