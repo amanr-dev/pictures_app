@@ -31,7 +31,7 @@ const Search = ({ searchTerm }) => {
       {pins?.length !== 0 && (
         <>
           <div className="flex items-start justify-start p-2">
-            <h4 className="text-xl text-slate-700 font-semibold">
+            <h4 className="text-xl text-slate-700 font-semibold dark:text-slate-50 ">
               Showing results for{" "}
               <span className="text-blue-500">{searchTerm}</span>
             </h4>

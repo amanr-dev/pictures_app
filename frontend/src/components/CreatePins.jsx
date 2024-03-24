@@ -91,13 +91,13 @@ const CreatePins = ({ user }) => {
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5 dark:bg-slate-900 dark:text-slate-50">
       {fields && (
-        <p className=" bg-red-200 w-full  text-red-500 mb-5 text-xl transition-all duration-150 ease-in flex flex-row justify-center gap-2 items-center">
+        <p className=" bg-red-200 w-full  text-red-500 mb-5 text-xl transition-all duration-150 ease-in flex flex-row justify-center gap-2 items-center dark:text-slate-50 dark:bg-slate-800">
           <FiAlertTriangle />
           Please fill in all the fields
         </p>
       )}
       {wrongImageType && (
-        <p className=" bg-blue-200 w-full  text-blue-500 mb-5 text-xl transition-all duration-150 ease-in flex flex-row justify-center gap-2 items-center">
+        <p className=" bg-blue-200 w-full  text-blue-500 mb-5 text-xl transition-all duration-150 ease-in flex flex-row justify-center gap-2 items-center dark:text-slate-50">
           <FiAlertTriangle style={{ fontSize: "2rem" }} />
           This image type is not supported🥲.
           <br />
@@ -105,10 +105,12 @@ const CreatePins = ({ user }) => {
         </p>
       )}
       <div className="flex lg:flex-row flex-col justify-center items-center dark:bg-slate-900 bg-white lg:p-5 p-3 lg:w-4/5 w-full ">
-        <div className="bg-secondaryColor p-3 flex flex-0.7 w-full">
-          <div className="justify-center flex items-center flex-col border-2 border-gray-300 p-3 w-full h-420 ">
+        <div className="bg-secondaryColor dark:bg-slate-800 p-3 flex flex-0.7 w-full">
+          <div className="justify-center flex items-center flex-col border-2 border-gray-300 p-3 w-full h-420 dark:text-slate-50 dark:bg-slate-800">
             {loading && <Spinner />}
-            {wrongImageType && <p>Wrong image type</p>}
+            {wrongImageType && (
+              <p className="dark:text-slate-50">Wrong image type</p>
+            )}
             {!imageAsset ? (
               <label className="cursor-pointer">
                 <div className="flex flex-col items-center justify-center h-full">
@@ -116,9 +118,11 @@ const CreatePins = ({ user }) => {
                     <p className="font-bold text-2xl">
                       <AiOutlineCloudUpload />
                     </p>
-                    <p className="text-lg">Click to upload</p>
+                    <p className="text-lg dark:text-slate-50">
+                      Click to upload
+                    </p>
                   </div>
-                  <p className="mt-32 text-gray-400">
+                  <p className="mt-32 text-gray-400 dark:text-slate-50">
                     Use hight-quality JPG, SVG, PNG, GIF OR TIFF less than 20 MB
                   </p>
                 </div>
@@ -126,11 +130,11 @@ const CreatePins = ({ user }) => {
                   type="file"
                   name="upload-image"
                   onChange={uploadImage}
-                  className="w-0 h-0"
+                  className="w-0 h-0 "
                 />
               </label>
             ) : (
-              <div className="relative h-full">
+              <div className="relative h-full ">
                 <img
                   src={imageAsset?.url}
                   alt="uploaded-pic"
@@ -138,7 +142,7 @@ const CreatePins = ({ user }) => {
                 />
                 <button
                   type="button"
-                  className="absolute bottom-3 right-3 p-3 rounded-full bg-white text-xl cursor-pointer outline-none hover:shadow-md transition-all duration-500 ease-in-out"
+                  className="absolute bottom-3 right-3 p-3 rounded-full text-red-500 bg-white text-xl cursor-pointer outline-none hover:shadow-md transition-all duration-500 ease-in-out"
                   onClick={() => setImageAsset(null)}
                 >
                   <MdDelete />
@@ -147,22 +151,24 @@ const CreatePins = ({ user }) => {
             )}
           </div>
         </div>
-        <div className="flex flex-1 flex-col gap-6 lg:pl-5 mt-5 w-full">
+        <div className="flex flex-1 flex-col gap-6 lg:pl-5 mt-5 w-full ">
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Set your title"
-            className="outline-none text-2xl sm:text-3xl  border-b-2 border-gray-200 p-2 text-slate-700"
+            className="outline-none text-2xl sm:text-3xl  border-b-2 border-gray-200 p-2 text-slate-700  dark:bg-slate-900 dark:text-slate-50"
           />
           {user && (
-            <div className="flex gap-2 my-2 items-center bg-white rounded-lg">
+            <div className="flex gap-2 my-2 items-center bg-white rounded-lg dark:text-slate-50 dark:bg-slate-900">
               <img
                 src={user.picture}
                 alt="user-profile"
                 className="w-10 h-10 rounded-full"
               />
-              <p className="font-semibold text-slate-700">{user.name}</p>
+              <p className="font-semibold text-slate-700  dark:text-slate-50">
+                {user.name}
+              </p>
             </div>
           )}
           <input
@@ -170,25 +176,28 @@ const CreatePins = ({ user }) => {
             value={about}
             onChange={(e) => setAbout(e.target.value)}
             placeholder="What is your Post about"
-            className="outline-none text-slate-700 sm:text-3xl text-xl border-b-2 border-gray-200 p-2"
+            className="outline-none text-slate-700 sm:text-3xl text-xl border-b-2  dark:bg-slate-900 border-gray-200 p-2 dark:text-slate-50 "
           />
           <input
             type="text"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             placeholder="Add your destination link"
-            className="outline-none  sm:text-3xl text-xl border-b-2 border-gray-200 p-2"
+            className="outline-none  sm:text-3xl text-xl border-b-2  dark:bg-slate-900 border-gray-200 p-2"
           />
-          <div className="flex flex-col">
+          <div className="flex flex-col  dark:bg-slate-900 dark:text-slate-50">
             <div>
-              <p className="mb-2 font-semibold text-lg sm:text-xl text-slate-700">
+              <p className="mb-2 font-semibold text-lg sm:text-xl text-slate-700 dark:text-slate-50 ">
                 Choose post category
               </p>
               <select
                 onChange={(e) => setCategory(e.target.value)}
-                className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer text-slate-500"
+                className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer text-slate-500  dark:bg-slate-900 dark:text-slate-50"
               >
-                <option value="other" className="bg-white ">
+                <option
+                  value="other"
+                  className="bg-white dark:text-slate-50 dark:bg-slate-800"
+                >
                   Select category
                 </option>
 
