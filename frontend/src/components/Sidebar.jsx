@@ -7,9 +7,9 @@ import { categories } from "../utils/data";
 
 // NavLink Styles
 const notActiveStyle =
-  "flex flex-center p-3 my-2 rounded-lg gap-2 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize  items-center";
+  "flex flex-center p-3 my-2 rounded-lg gap-2 text-gray-500 dark:text-slate-50 hover:text-black transition-all duration-200 ease-in-out capitalize  items-center hover:dark:text-blue-500";
 const isActiveStyle =
-  "flex flex-center p-3 my-2 bg-slate-200 rounded-lg gap-2 font-extrabold text-slate-700   transition-all duration-200 ease-in-out items-center  capitalize";
+  "flex flex-center p-3 my-2 bg-slate-200 rounded-lg gap-2 font-extrabold text-slate-700   transition-all duration-200 ease-in-out items-center   capitalize";
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -38,7 +38,7 @@ const Sidebar = ({ user, closeToggle }) => {
             <RiHome2Line fontSize="1.2rem" />
             Home
           </NavLink>
-          <h3 className="mt-2 px-5 text-base 2xl:text-xl font-semibold text-gray-500">
+          <h3 className="mt-2 px-5 text-base 2xl:text-xl font-semibold dark:text-slate-50 text-gray-500">
             Discover categories
           </h3>
           {categories.slice(0, categories.length - 1).map((category) => (
@@ -63,7 +63,7 @@ const Sidebar = ({ user, closeToggle }) => {
       {user && (
         <Link
           to={`user-profile/${user.jti}`}
-          className="flex mb-3 gap-2 items-center bg-slate-50 rounded-lg shadow-lg mx-3 relative -top-[20px]"
+          className="flex mb-3 gap-2 items-center dark:bg-slate-900 dark:text-slate-50 dark:outline-slate-50 dark:outline dark:p-2 bg-slate-50 rounded-lg shadow-lg mx-3 relative -top-[20px]"
           onClick={handleCloseSidebar}
         >
           <img
