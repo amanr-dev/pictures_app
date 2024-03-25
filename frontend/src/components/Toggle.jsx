@@ -1,8 +1,7 @@
 import React from "react";
 import Toggle from "react-toggle";
 import { useColorScheme } from "../utils/useColorScheme";
-import { FaLightbulb } from "react-icons/fa";
-import { LuLightbulbOff } from "react-icons/lu";
+
 import { BsLightbulbOffFill, BsFillLightbulbFill } from "react-icons/bs";
 
 export const DarkModeToggle = () => {
