@@ -12,10 +12,6 @@ export const DarkModeToggle = () => {
         {isDark ? (
           <BsFillLightbulbFill className="text-amber-400 text-xl" />
         ) : (
-          // <FaLightbulb className="text-amber-400 text-xl" />
-          // <FaRegLightbulb className="text-slate-800 text-xl" />
-          // <LuLightbulbOff className="text-amber-400 text-xl" />
-
           <BsLightbulbOffFill className="text-slate-800 text-xl" />
         )}
       </div>
