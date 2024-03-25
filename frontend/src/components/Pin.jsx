@@ -7,6 +7,7 @@ import { AiFillHeart, AiOutlineHeart, AiTwotoneDelete } from "react-icons/ai";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { fetchUser } from "../utils/fetchUser";
 import { BiBookmark, BiSolidBookmark } from "react-icons/bi";
+import { IoIosShareAlt } from "react-icons/io";
 
 const Pin = ({
   responsive,
@@ -153,7 +154,7 @@ const Pin = ({
                   rel="noreferrer"
                   className="bg-white flex items-center gap-1 text-slate-700 font-semibold p-2 pl-2 pr-2 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
                 >
-                  <BsFillArrowUpRightCircleFill />
+                  <IoIosShareAlt />
                   {destination.length > 15
                     ? destination.slice(0, 12)
                     : destination}
