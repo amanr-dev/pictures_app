@@ -7,6 +7,8 @@ import { client, urlFor } from "../client";
 import MasonryLayout from "./MasonryLayout";
 import { pinDetailMorePinQuery, pinDetailQuery } from "../utils/data";
 import Spinner from "./Spinner";
+import { IoIosShareAlt } from "react-icons/io";
+import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 
 const PinDetails = ({ user }) => {
   const [pins, setPins] = useState(null);
@@ -92,14 +94,20 @@ const PinDetails = ({ user }) => {
                 href={`${image?.asset?.url}?dl=`}
                 download
                 onClick={(e) => e.stopPropagation()}
-                className="bg-slate-50 w-9 h-9 rounded-full flex items-center justify-center text-slate-700
+                className="bg-slate-200 w-9 h-9 rounded-full flex items-center justify-center text-slate-700
                   text-2xl opacity-75
                   hover:opacity-100 hover:shadow-md outline-none "
               >
                 <MdDownloadForOffline />
               </a>
-              <a href={destination} target="_blank" rel="noreferrer">
+              <a
+                href={destination}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center text-slate-700  dark:text-slate-50 gap-1 text-base hover:text-blue-500 hover:dark:text-blue-500"
+              >
                 Visit Post Destination
+                <BsFillArrowUpRightCircleFill />
               </a>
             </div>
           </div>
