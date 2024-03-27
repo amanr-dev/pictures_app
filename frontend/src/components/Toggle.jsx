@@ -1,8 +1,8 @@
 import React from "react";
 import Toggle from "react-toggle";
 import { useColorScheme } from "../utils/useColorScheme";
-
-import { BsLightbulbOffFill, BsFillLightbulbFill } from "react-icons/bs";
+import { MdOutlineLightMode } from "react-icons/md";
+import { IoMoon } from "react-icons/io5";
 
 export const DarkModeToggle = () => {
   const { isDark, setIsDark } = useColorScheme();
@@ -10,9 +10,9 @@ export const DarkModeToggle = () => {
     <div className="flex items-center justify-center flex-row gap-2 relative cursor-pointer">
       <div className="flex items-center justify-center flex-row  cursor-pointer">
         {isDark ? (
-          <BsFillLightbulbFill className="text-amber-400 text-xl" />
+          <MdOutlineLightMode className="text-amber-400 text-xl" />
         ) : (
-          <BsLightbulbOffFill className="text-slate-800 text-xl" />
+          <IoMoon className="text-blue-800 text-xl" />
         )}
       </div>
       <Toggle
