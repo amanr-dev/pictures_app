@@ -34,15 +34,6 @@ const Feed = () => {
   if (!pins?.length) {
     return (
       <div className="w-full h-[85vh] flex justify-center items-center  flex-col ">
-        {/* <span className="text-2xl text-slate-500 ">
-          No Posts Found, Go create posts.
-        </span>
-        <Link
-          to={`/create-pin`}
-          className="text-blue-500 px-3 py-2 text-xl hover:text-blue-700"
-        >
-          Create post
-        </Link> */}
         <Spinner text="Loading..." />
       </div>
     );
