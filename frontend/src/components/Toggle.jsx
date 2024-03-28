@@ -12,7 +12,7 @@ export const DarkModeToggle = () => {
         {isDark ? (
           <MdOutlineLightMode className="text-amber-400 text-xl" />
         ) : (
-          <IoMoon className="text-blue-800 text-xl" />
+          <IoMoon className="text-blue-500 text-xl" />
         )}
       </div>
       <Toggle

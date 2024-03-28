@@ -8,7 +8,7 @@ import { DarkModeToggle } from "./Toggle";
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   return (
     <>
-      <div className="flex gap-2 md:gap-5 w-full mt-2  px-[10px] dark:bg-slate-900 items-center">
+      <div className="flex gap-2 md:gap-3 w-full mt-2  px-[10px] dark:bg-slate-900 items-center">
         <div className="flex justify-start items-center w-full  rounded-md    border-none outline-none focus-within:shadow-sm ">
           <div className=" dark:bg-slate-800 rounded-md dark:outline-slate-50 flex justify-start items-center w-full px-2   border-none outline-none focus-within:shadow-sm bg-slate-200">
             <IoMdSearch
@@ -24,13 +24,13 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
             />
           </div>
         </div>
-        <div className="flex gap-3">
+        <div className="flex gap-2">
           <Link
             to={`/saved-posts/${user?.jti}`}
             className="bg-slate-700
-        text-white rounded-full w-10  md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
+        text-white rounded-full w-[29px] h-[29px]  md:w-12 md:h-10 justify-center flex items-center text-xl hover:scale-110"
           >
-            <BiSolidBookmark />
+            <BiSolidBookmark className="max-sm:text-[18px]" />
           </Link>
           <Link
             to={`user-profile/${user?.jti}`}
@@ -45,12 +45,12 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           <Link
             to="create-pin"
             className="bg-slate-700
-        text-white rounded-full w-10  md:w-12 md:h-10 jus justify-center flex items-center text-xl hover:scale-110"
+        text-white rounded-full w-[29px] h-[29px]   md:w-12 md:h-10 justify-center flex items-center text-xl hover:scale-110"
           >
-            <FaUpload />
+            <FaUpload className="max-sm:text-[18px]" />
           </Link>
         </div>
-        <div>
+        <div className="dark:bg-slate-700 p-2 rounded-full max-sm:p-1 bg-slate-200 flex items-center justify-center">
           <DarkModeToggle />
         </div>
       </div>
