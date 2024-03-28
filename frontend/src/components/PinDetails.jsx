@@ -139,7 +139,8 @@ const PinDetails = ({ user }) => {
                     <div className="flex flex-col w-full">
                       <div className="w-full flex items-center justify-center mx-auto">
                         <span className="text-center text-sm italic">
-                          Comments are empty. Be the first to comment!
+                          Comments are empty. <br className="my-2" />
+                          Be the first one to comment!
                         </span>
                       </div>
                     </div>
