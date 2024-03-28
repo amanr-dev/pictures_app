@@ -51,12 +51,12 @@ const CreatePins = ({ user }) => {
   };
 
   const savePin = () => {
-    if (title && about && destination && imageAsset?._id && category) {
+    if (title && about && imageAsset?._id && category) {
       const doc = {
         _type: "pin",
         title,
         about,
-        destination,
+        destination: destination ? destination : "",
         image: {
           _type: "image",
           asset: {
@@ -157,7 +157,7 @@ const CreatePins = ({ user }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Set your title"
-            className="outline-none text-2xl sm:text-3xl  border-b-2 border-gray-200 p-2 text-slate-700  dark:bg-slate-900 dark:text-slate-50"
+            className="outline-none text-xl sm:text-2xl  border-b-2 border-gray-200 p-2 text-slate-700  dark:bg-slate-900 dark:text-slate-50"
           />
           {user && (
             <div className="flex gap-2 my-2 items-center bg-white rounded-lg dark:text-slate-50 dark:bg-slate-900">
@@ -176,14 +176,14 @@ const CreatePins = ({ user }) => {
             value={about}
             onChange={(e) => setAbout(e.target.value)}
             placeholder="What is your Post about"
-            className="outline-none text-slate-700 sm:text-3xl text-xl border-b-2  dark:bg-slate-900 border-gray-200 p-2 dark:text-slate-50 "
+            className="outline-none text-slate-700 sm:text-2xl text-xl border-b-2  dark:bg-slate-900 border-gray-200 p-2 dark:text-slate-50 "
           />
           <input
             type="text"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
-            placeholder="Add your destination link"
-            className="outline-none  sm:text-3xl text-xl border-b-2  dark:bg-slate-900 border-gray-200 p-2"
+            placeholder="(Optional) Add destination link"
+            className="outline-none  sm:text-2xl text-xl border-b-2  dark:bg-slate-900 border-gray-200 p-2"
           />
           <div className="flex flex-col  dark:bg-slate-900 dark:text-slate-50">
             <div>

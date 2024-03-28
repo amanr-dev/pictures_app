@@ -7,16 +7,19 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      require: true,
     },
     {
       name: 'about',
       title: 'About',
       type: 'string',
+      require: true,
     },
     {
       name: 'destination',
       title: 'Destination',
       type: 'url',
+      require: false,
     },
     {
       name: 'category',
@@ -30,6 +33,7 @@ export default {
       options: {
         hotspot: true,
       },
+      require: true,
     },
     {
       name: 'userId',
