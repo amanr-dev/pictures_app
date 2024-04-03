@@ -10,15 +10,18 @@ import { client } from "../client";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 
+// Profile Banner
 const randomImage =
   "https://source.unsplash.com/1600x900/?nature,coding,universe";
 
+// Buttons
 const actvieBtnClass =
   "bg-blue-500 mr-4 text-white font-bold p-2 rounded-full w-20 outline-none";
 const nonActiveBtnClass =
   "bg-slate-500 mr-4 text-slate-100 font-bold p-2 rounded-full w-20 outline-none";
 
 const User = () => {
+  // States
   const [user, setUser] = useState(null);
   const [pins, setPins] = useState(null);
   const [text, setText] = useState("Created");
@@ -26,6 +29,7 @@ const User = () => {
   const navigate = useNavigate();
   const { userId } = useParams();
 
+  // useEffect for user
   useEffect(() => {
     const query = userQuery(userId);
     client.fetch(query).then((data) => {
@@ -33,6 +37,7 @@ const User = () => {
     });
   }, [userId]);
 
+  // Change Posts
   useEffect(() => {
     if (text === "Created") {
       const createdPinsQuery = userCreatedPinsQuery(userId);
@@ -49,7 +54,12 @@ const User = () => {
     }
   }, [text, userId]);
 
-  // Refactor the logout function, so it aslo delete the user from sanity database.
+  // Dynamicly change the Title
+  useEffect(() => {
+    window.document.title = `Pictures | ${user?.userName}`;
+  }, [user]);
+
+  // Refactor the logout function, so it aslo delete the user from sanity database. TODO
   const logout = () => {
     localStorage.clear();
     navigate("/login");
