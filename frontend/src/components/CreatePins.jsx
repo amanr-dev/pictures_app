@@ -17,6 +17,7 @@ const CreatePins = ({ user }) => {
   const [imageAsset, setImageAsset] = useState(null);
   const [wrongImageType, setWrongImageType] = useState(false);
 
+  // Upload Image
   const uploadImage = (e) => {
     const { type, name } = e.target.files[0];
 
@@ -50,6 +51,7 @@ const CreatePins = ({ user }) => {
     }
   };
 
+  // Upload Post
   const savePin = () => {
     if (title && about && imageAsset?._id && category) {
       const doc = {
@@ -85,7 +87,6 @@ const CreatePins = ({ user }) => {
       setTimeout(() => setFields(false), 2000);
     }
   };
-  // console.log(imageAsset);
 
   const naviagte = useNavigate();
   return (
