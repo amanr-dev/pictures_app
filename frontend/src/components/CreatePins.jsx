@@ -56,7 +56,7 @@ const CreatePins = ({ user }) => {
         _type: "pin",
         title,
         about,
-        destination: destination ? destination : "",
+        destination: destination ? destination : null,
         image: {
           _type: "image",
           asset: {
