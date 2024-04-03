@@ -193,11 +193,11 @@ const CreatePins = ({ user }) => {
               </p>
               <select
                 onChange={(e) => setCategory(e.target.value)}
-                className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer text-slate-500  dark:bg-slate-900 dark:text-slate-50"
+                className="outline-none w-full text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer text-slate-500  dark:bg-slate-800 dark:text-slate-50 "
               >
                 <option
                   value="other"
-                  className="bg-white dark:text-slate-50 dark:bg-slate-800"
+                  className="bg-white dark:text-slate-50 dark:bg-slate-800 "
                 >
                   Select category
                 </option>
