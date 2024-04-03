@@ -12,7 +12,7 @@ import Spinner from "./Spinner";
 
 // Profile Banner
 const randomImage =
-  "https://source.unsplash.com/1600x900/?nature,coding,universe";
+  "https://source.unsplash.com/1600x900/?nature,space,programming,universe";
 
 // Buttons
 const actvieBtnClass =
