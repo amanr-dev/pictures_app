@@ -140,7 +140,7 @@ const User = () => {
             </div>
           ) : (
             <div className="flex justify-center items-center text-xl dark:text-slate-50 text-slate-500 mt-4">
-              No posts found, Please create posts!
+              No posts found, Please create or save some posts!
             </div>
           )}
         </div>
