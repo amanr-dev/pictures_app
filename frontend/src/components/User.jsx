@@ -9,10 +9,13 @@ import {
 import { client } from "../client";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
+import Banner from "../assets/nature-banner.jpg";
 
 // Profile Banner
-const randomImage =
-  "https://source.unsplash.com/1600x900/?nature,space,programming,universe";
+
+// Random image api is not working now
+// const randomImage =
+//   "https://source.unsplash.com/1600x900/?nature,space,programming,universe";
 
 // Buttons
 const actvieBtnClass =
@@ -75,7 +78,7 @@ const User = () => {
         <div className="relative flex flex-col mb-7">
           <div className="flex flex-col justify-center items-center ">
             <img
-              src={randomImage}
+              src={Banner}
               className="w-full h-370 2xl:h-510 shadow-lg object-cover"
               alt="banner"
             />
