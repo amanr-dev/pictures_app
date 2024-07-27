@@ -17,12 +17,14 @@ const Home = () => {
   const user = fetchUser();
 
   useEffect(() => {
-    const query = userQuery(user?.jti);
+    if (!theUser) {
+      const query = userQuery(user?.jti);
 
-    client.fetch(query).then((data) => {
-      setTheUser(data[0]);
-    });
-  }, []);
+      client.fetch(query).then((data) => {
+        setTheUser(data[0]);
+      });
+    }
+  }, [theUser, user?.jti]);
 
   useEffect(() => {
     scrollRef.current.scrollTo(0, 0);

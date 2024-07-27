@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { MdDownloadForOffline } from "react-icons/md";
 import { AiFillHeart, AiOutlineHeart, AiTwotoneDelete } from "react-icons/ai";
-import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { fetchUser } from "../utils/fetchUser";
 import { BiBookmark, BiSolidBookmark } from "react-icons/bi";
 import { IoIosShareAlt } from "react-icons/io";
