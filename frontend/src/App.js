@@ -25,6 +25,8 @@ function App() {
 
   return (
     <>
+      {/* Animated Cursor */}
+
       {/* {!responsive && (
         <AnimatedCursor
           innerSize={12}

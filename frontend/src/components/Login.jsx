@@ -30,7 +30,7 @@ const Login = () => {
 
   // On Success
   const onFail = (res) => {
-    console.log("Faild🥲", res);
+    console.log("Login Failed =>", res);
   };
 
   return (
