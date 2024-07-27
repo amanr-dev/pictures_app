@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { MdDownloadForOffline } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
@@ -47,7 +47,7 @@ const PinDetails = ({ user }) => {
   };
   // console.log(user);
 
-  const fetchPinDetails = () => {
+  const fetchPinDetails = useCallback(() => {
     let query = pinDetailQuery(pinId);
 
     if (query) {
@@ -61,11 +61,11 @@ const PinDetails = ({ user }) => {
         }
       });
     }
-  };
+  }, [pinId]);
 
   useEffect(() => {
     fetchPinDetails();
-  }, [pinId]);
+  }, [pinId, fetchPinDetails]);
 
   if (!pinDetails) {
     return <Spinner text="Loading Post..." />;

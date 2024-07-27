@@ -15,7 +15,7 @@ function App() {
     if (!user) {
       navigate("/login");
     }
-  }, [user]);
+  }, []);
 
   // const responsive = useMediaQuery({
   //   query: "(max-width: 666px)",
