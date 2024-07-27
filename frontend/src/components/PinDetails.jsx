@@ -7,7 +7,6 @@ import { client, urlFor } from "../client";
 import MasonryLayout from "./MasonryLayout";
 import { pinDetailMorePinQuery, pinDetailQuery } from "../utils/data";
 import Spinner from "./Spinner";
-import { IoIosShareAlt } from "react-icons/io";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 
 const PinDetails = ({ user }) => {

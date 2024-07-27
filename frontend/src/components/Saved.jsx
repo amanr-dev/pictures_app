@@ -10,12 +10,14 @@ const Saved = () => {
   const [savedPosts, setSavedPosts] = useState(null);
 
   useEffect(() => {
-    const query = userQuery(userId);
-    client.fetch(query).then((data) => {
-      setUser(data[0]);
-    });
+    if (!user) {
+      const query = userQuery(userId);
+      client.fetch(query).then((data) => {
+        setUser(data[0]);
+      });
+    }
     // console.log({ query, user });
-  }, [userId]);
+  }, [userId, user]);
 
   // console.log(savedPosts);
   useEffect(() => {
