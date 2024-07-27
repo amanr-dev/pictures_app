@@ -53,7 +53,6 @@ const PinDetails = ({ user }) => {
     if (query) {
       client.fetch(query).then((data) => {
         setPinDetails(data[0]);
-        // console.log(data);
         if (data[0]) {
           query = pinDetailMorePinQuery(data[0]);
 
