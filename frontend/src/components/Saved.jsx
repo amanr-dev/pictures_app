@@ -16,7 +16,6 @@ const Saved = () => {
         setUser(data[0]);
       });
     }
-    // console.log({ query, user });
   }, [userId, user]);
 
   // console.log(savedPosts);
