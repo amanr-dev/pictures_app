@@ -18,10 +18,8 @@ const Saved = () => {
     }
   }, [userId, user]);
 
-  // console.log(savedPosts);
   useEffect(() => {
     const savePinsQuery = userSavedPinsQuery(userId);
-    // console.log(savePinsQuery);
 
     client.fetch(savePinsQuery).then((post) => {
       setSavedPosts(post);
