@@ -47,7 +47,7 @@ const MasonryLayout = ({ pins }) => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://github.com/amanr-dev"
+              href="https://github.com/dipanshurdev"
             >
               <FaGithub className="text-slate-500  dark:text-slate-50" />
             </a>
@@ -56,7 +56,7 @@ const MasonryLayout = ({ pins }) => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://twitter.com/amanrdev"
+              href="https://twitter.com/dipanshurdev"
             >
               <FaXTwitter className="text-slate-500  dark:text-slate-50" />
             </a>
@@ -64,7 +64,7 @@ const MasonryLayout = ({ pins }) => {
         </div>
         <div className="p-2">
           <span className="text-slate-500 text-sm font-semibold  dark:text-slate-50">
-            Built by <span className="text-blue-500">Aman Rawat</span>
+            Built by <span className="text-blue-500">Dipanshu Rawat</span>
           </span>
         </div>
         <div className="flex items-center justify-center gap-4">
